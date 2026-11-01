@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% set page='notes' %}{% set root='./' %}{% set page_title='notes' %}
+{% block body %}
+<h1>notes</h1>
+<p class="sub">{{ notes|length }} papers. search your own words.</p>
+<input class="search" id="q" placeholder="search titles, what you understood, gaps…" autocomplete="off">
+<ul class="list" id="list">
+{% for n in notes %}<li data-id="{{ n.id }}"><span class="d">{{ n.date }}</span><span><a class="keep" href="paper/{{ n.slug }}.html">{{ n.title }}</a> <span class="tag {{ n.lane }}">{{ n.lane }}</span>{% for t in n.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% if n.rating %}<span class="meta">★{{ n.rating }}</span>{% endif %}</span></li>
+{% endfor %}
+</ul>
+{% if not notes %}<p class="empty">nothing yet. read today's pick and log it.</p>{% endif %}
+<script>
+fetch('search.json').then(r=>r.json()).then(idx=>{
+  const q=document.getElementById('q'), items=[...document.querySelectorAll('#list li')];
+  const byId=Object.fromEntries(idx.map(i=>[i.id,(i.title+' '+i.text+' '+i.tags.join(' ')).toLowerCase()]));
+  q.addEventListener('input',()=>{const s=q.value.toLowerCase().trim();items.forEach(li=>{li.style.display=!s||byId[li.dataset.id].includes(s)?'':'none';});});
+});
+</script>
+{% endblock %}

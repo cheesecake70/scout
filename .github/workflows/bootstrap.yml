@@ -1,0 +1,33 @@
+name: bootstrap
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: |
+          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet -e ".[embed]"
+      - name: Pick ~20 seed papers
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: scout bootstrap > /tmp/seed.md
+      - name: Open the feedback issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const list = fs.readFileSync('/tmp/seed.md', 'utf8');
+            const body = `### Votes\n\nTick 👍 or 👎 on each line (edit this issue), then add the label \`scout:bootstrap\` or re-save.\n\n${list}`;
+            await github.rest.issues.create({ ...context.repo, title: 'bootstrap feedback', body, labels: ['scout:seed'] });

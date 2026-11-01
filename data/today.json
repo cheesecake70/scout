@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-01",
+  "picks": [
+    {
+      "paper": {
+        "id": "2301.12597",
+        "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+        "abstract": "The cost of vision-and-language pre-training has become increasingly prohibitive due to end-to-end training of large-scale models. This paper proposes BLIP-2, a generic and efficient pre-training strategy that bootstraps vision-language pre-training from off-the-shelf frozen pre-trained image encoders and frozen large language models. BLIP-2 bridges the modality gap with a lightweight Querying Transformer, which is pre-trained in two stages. The first stage bootstraps vision-language representation learning from a frozen image encoder. The second stage bootstraps vision-to-language generative learning from a frozen language model. BLIP-2 achieves state-of-the-art performance on various vision-language tasks, despite having significantly fewer trainable parameters than existing methods. For example, our model outperforms Flamingo80B by 8.7% on zero-shot VQAv2 with 54x fewer trainable parameters. We also demonstrate the model's emerging capabilities of zero-shot image-to-text generation that can follow natural language instructions.",
+        "authors": [
+          "Junnan Li",
+          "Dongxu Li",
+          "S. Savarese",
+          "S. Hoi"
+        ],
+        "published": "2023-01-30",
+        "url": "https://www.semanticscholar.org/paper/3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+        "pdf_url": "http://arxiv.org/pdf/2301.12597",
+        "venue": "International Conference on Machine Learning",
+        "arxiv_id": "2301.12597",
+        "doi": "10.48550/arXiv.2301.12597",
+        "s2_id": "3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+        "citation_count": 9718,
+        "influential_citation_count": 1033,
+        "hf_upvotes": null,
+        "source_lanes": [],
+        "source_reason": "essential on 'vision-language and generative image/video models'"
+      },
+      "lane": "essential",
+      "depth": "deep",
+      "score": 1.0,
+      "why": "essential on 'vision-language and generative image/video models'",
+      "payoff": "The cost of vision-and-language pre-training has become increasingly prohibitive due to end-to-end training of large-scale models. This paper proposes BLIP-2, a generic and efficient pre-training strategy that bootstraps vision-language pre-training from off-the-shelf frozen pre-…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2610.39664",
+        "title": "EditAgent: Rethinking Agentic Image Editing",
+        "abstract": "Agentic image editors decompose complex requests into steps, but when a step fails, they mostly retry with the same narrow set of tools and a judge that scores each output by eye directly. We argue that such agents are bounded by two spaces: the action space of what the agent can do, and the observation space of what its judge can see. On our expert-annotated benchmark, a general-purpose editor yields no usable result in over 40% of the cases, and no judge is reliable across edit types. We present EditAgent, which expands both spaces. It routes each step to general editors and specialized methods, and attaches to each candidate a verification record. With these records, off-the-shelf VLM judges outperform finetuned reward models. Candidates are generated in parallel and judged in one listwise call: experts prefer this to sequential refinement in 78.5% of decided comparisons, at no more than half the judge calls. EditAgent improves two open-weight editors on three benchmarks and serves as a data engine for training stronger editors.",
+        "authors": [
+          "Haiyang Xu",
+          "Tianyu Wang",
+          "Jialu Li",
+          "Jiteng Mu",
+          "Yuanjun Xiong",
+          "Jianming Zhang",
+          "Zhuowen Tu",
+          "Mingze Xu"
+        ],
+        "published": "2026-10-29",
+        "url": "https://arxiv.org/abs/2610.39664",
+        "pdf_url": "https://arxiv.org/pdf/2610.39664v1",
+        "venue": "arXiv cs.CV",
+        "arxiv_id": "2610.39664",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": 10,
+        "source_lanes": [
+          "field",
+          "niche"
+        ],
+        "source_reason": "new on arXiv; trending on HF Daily Papers"
+      },
+      "lane": "niche",
+      "depth": "skim",
+      "score": 0.6459,
+      "why": "new on arXiv; trending on HF Daily Papers",
+      "payoff": "Agentic image editors decompose complex requests into steps, but when a step fails, they mostly retry with the same narrow set of tools and a judge that scores each output by eye directly. We argue that such agents are bounded by two spaces: the action space of what the agent can…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2009.03300",
+        "title": "Measuring Massive Multitask Language Understanding",
+        "abstract": "We propose a new test to measure a text model's multitask accuracy. The test covers 57 tasks including elementary mathematics, US history, computer science, law, and more. To attain high accuracy on this test, models must possess extensive world knowledge and problem solving ability. We find that while most recent models have near random-chance accuracy, the very largest GPT-3 model improves over random chance by almost 20 percentage points on average. However, on every one of the 57 tasks, the best models still need substantial improvements before they can reach expert-level accuracy. Models also have lopsided performance and frequently do not know when they are wrong. Worse, they still have near-random accuracy on some socially important subjects such as morality and law. By comprehensively evaluating the breadth and depth of a model's academic and professional understanding, our test can be used to analyze models across many tasks and to identify important shortcomings.",
+        "authors": [
+          "Dan Hendrycks",
+          "Collin Burns",
+          "Steven Basart",
+          "Andy Zou",
+          "Mantas Mazeika",
+          "D. Song",
+          "Jacob Steinhardt"
+        ],
+        "published": "2020-09-07",
+        "url": "https://www.semanticscholar.org/paper/814a4f680b9ba6baba23b93499f4b48af1a27678",
+        "pdf_url": "https://arxiv.org/pdf/2009.03300",
+        "venue": "International Conference on Learning Representations",
+        "arxiv_id": "2009.03300",
+        "doi": null,
+        "s2_id": "814a4f680b9ba6baba23b93499f4b48af1a27678",
+        "citation_count": 10349,
+        "influential_citation_count": 1967,
+        "hf_upvotes": null,
+        "source_lanes": [
+          "neighbourhood"
+        ],
+        "source_reason": "cited by 2510.00001"
+      },
+      "lane": "neighbourhood",
+      "depth": "skim",
+      "score": 0.5147,
+      "why": "cited by 2510.00001",
+      "payoff": "We propose a new test to measure a text model's multitask accuracy. The test covers 57 tasks including elementary mathematics, US history, computer science, law, and more. To attain high accuracy on this test, models must possess extensive world knowledge and problem solving abil…",
+      "led_from": []
+    }
+  ],
+  "generated_at": "2026-11-01T15:56:30.737182+05:30",
+  "gap_queries": [
+    "I don't understand how the difficulty predictor is trained without labels"
+  ]
+}

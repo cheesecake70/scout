@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}{% if page_title %} · {{ page_title }}{% endif %}</title>
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<main>
+<nav>
+  <a class="brand" href="{{ root }}index.html">{{ title }}</a>
+  <a href="{{ root }}index.html" class="{{ 'on' if page=='today' }}">today</a>
+  <a href="{{ root }}notes.html" class="{{ 'on' if page=='notes' }}">notes</a>
+  <a href="{{ root }}path.html" class="{{ 'on' if page=='path' }}">path</a>
+  <a href="{{ root }}later.html" class="{{ 'on' if page=='later' }}">later</a>
+  <a href="{{ root }}stats.html" class="{{ 'on' if page=='stats' }}">stats</a>
+</nav>
+{% block body %}{% endblock %}
+<footer>
+  <a href="{{ issue_url(repo, 'log-paper.yml') }}">i read something else</a> ·
+  <a href="{{ issue_url(repo, 'want.yml') }}">i want to read this eventually</a> ·
+  <a href="https://github.com/{{ repo }}">repo</a>
+</footer>
+</main>
+</body>
+</html>

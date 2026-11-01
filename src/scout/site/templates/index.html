@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% set page='today' %}{% set root='./' %}
+{% block body %}
+<h1>today</h1>
+<p class="sub">{{ today.strftime('%A %d %B %Y').lower() }}{% if stats.streak %} · {{ stats.streak }}-day streak{% endif %}</p>
+{% if stale %}<div class="banner">these picks are from {{ today_.date }}. the next run will replace them; nothing carries over.</div>{% endif %}
+{% if not today_ %}
+  <p class="empty">no picks yet. run the <span class="keep">daily</span> workflow once.</p>
+{% else %}
+  {% if today_.gap_queries %}<p class="meta">searched for your gaps: {{ today_.gap_queries|join(' · ') }}</p>{% endif %}
+  {% for p in today_.picks %}
+  <div class="card">
+    <span class="tag {{ p.lane }}">{{ p.lane }}</span><span class="tag deep">{{ p.depth }}</span>
+    <h3 class="keep"><a href="{{ p.paper.url }}" target="_blank" rel="noopener">{{ p.paper.title }}</a></h3>
+    <div class="meta keep">{{ p.paper.authors[:3]|join(', ') }}{% if p.paper.authors|length > 3 %} et al.{% endif %}{% if p.paper.venue %} · {{ p.paper.venue }}{% endif %}{% if p.paper.published %} · {{ p.paper.published }}{% endif %}
+      {% if p.paper.pdf_url %} · <a href="{{ p.paper.pdf_url }}" target="_blank" rel="noopener">pdf</a>{% endif %}</div>
+    <p class="why keep">{{ p.why }}</p>
+    <p class="payoff keep">{{ p.payoff }}</p>
+    {% if p.led_from %}<p class="meta">picked because of a gap you wrote in {% for i in p.led_from %}{% if i in by_id %}<a href="paper/{{ by_id[i].slug }}.html">{{ by_id[i].title|lower|truncate(40) }}</a>{% endif %}{% endfor %}</p>{% endif %}
+    <div class="actions">
+      <a class="btn primary" href="{{ issue_url(repo, 'read.yml', title='read: ' ~ p.paper.id, paper=p.paper.id) }}">i read this</a>
+      <a class="btn" href="{{ issue_url(repo, 'want.yml', title='want: ' ~ p.paper.id, paper=p.paper.id) }}">later</a>
+      <a class="btn" href="{{ issue_url(repo, 'skip.yml', title='skip: ' ~ p.paper.id, paper=p.paper.id) }}">skip</a>
+    </div>
+  </div>
+  {% endfor %}
+{% endif %}
+{% if notes %}
+<h2>recent notes</h2>
+<ul class="list">
+{% for n in notes %}<li><span class="d">{{ n.date }}</span><span><a class="keep" href="paper/{{ n.slug }}.html">{{ n.title }}</a> <span class="tag {{ n.lane }}">{{ n.lane }}</span></span></li>{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

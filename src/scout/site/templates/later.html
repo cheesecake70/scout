@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% set page='later' %}{% set root='./' %}{% set page_title='later' %}
+{% block body %}
+<h1>later</h1>
+<p class="sub">your want queue. one of these takes the deep slot every few days, oldest first.</p>
+{% if not want %}<p class="empty">empty. <a href="{{ issue_url(repo, 'want.yml') }}">add one</a>.</p>{% endif %}
+<ul class="list">
+{% for w in want %}<li><span class="d">{{ w.added }}</span><span><a class="keep" href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title or w.id }}</a>{% if w.why %} <span class="meta keep">— {{ w.why }}</span>{% endif %}{% if w.by_when %} <span class="tag want">by {{ w.by_when }}</span>{% endif %}</span></li>
+{% endfor %}
+</ul>
+<p class="meta" style="margin-top:20px">to reorder or remove, edit <a href="https://github.com/{{ repo }}/edit/main/data/want.yaml"><span class="keep">data/want.yaml</span></a>.</p>
+{% if missed %}<h2>missed</h2><p class="meta">picks you didn't get to. they may come back on their own after a couple of weeks if they still fit.</p>
+<ul class="list">{% for id, d in missed.items()|sort(attribute=1, reverse=true) %}<li><span class="d">{{ d }}</span><span class="keep">{{ id }}</span></li>{% endfor %}</ul>{% endif %}
+{% endblock %}

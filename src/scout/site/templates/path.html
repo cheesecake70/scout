@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% set page='path' %}{% set root='./' %}{% set page_title='path' %}
+{% block body %}
+<h1>path</h1>
+<p class="sub">what you read, the gap it left, and what that gap led to. gaps in time stay gaps.</p>
+{% if not notes %}<p class="empty">your path starts with the first note.</p>{% endif %}
+<div class="path">
+{% set linked = {} %}{% for a,b in edges %}{% set _ = linked.update({a.id: linked.get(a.id, []) + [b]}) %}{% endfor %}
+{% for n in notes|reverse %}
+  <div class="step {{ 'linked' if n.id in linked or n.led_from }}">
+    <div class="meta">{{ n.date }} · <span class="tag {{ n.lane }}">{{ n.lane }}</span></div>
+    <div class="keep"><a href="paper/{{ n.slug }}.html">{{ n.title }}</a></div>
+    {% if n.gaps %}<div class="gap keep">gap: {{ n.gaps|truncate(160) }}</div>{% endif %}
+    {% for m in linked.get(n.id, []) %}<div class="arrow keep">→ led to <a href="paper/{{ m.slug }}.html">{{ m.title }}</a> ({{ m.date }})</div>{% endfor %}
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

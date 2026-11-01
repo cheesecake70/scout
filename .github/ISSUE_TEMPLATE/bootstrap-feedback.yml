@@ -1,0 +1,12 @@
+name: "🌱 Bootstrap feedback"
+description: Paste the list from the bootstrap run and tick 👍 or 👎 on each line.
+title: "bootstrap feedback"
+labels: ["scout:bootstrap"]
+body:
+  - type: textarea
+    id: votes
+    attributes:
+      label: Votes
+      description: "One line per paper: '- [x] 👍  [ ] 👎  Title (url)'. Tick exactly one box per line."
+    validations:
+      required: true

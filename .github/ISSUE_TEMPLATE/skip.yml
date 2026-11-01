@@ -1,0 +1,15 @@
+name: "⏭ Skip this one"
+description: Not for me. It won't come back.
+title: "skip: "
+labels: ["scout:skip"]
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: Paper
+    validations:
+      required: true
+  - type: input
+    id: reason
+    attributes:
+      label: Why (optional, helps the ranking)

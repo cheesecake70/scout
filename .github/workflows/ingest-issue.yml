@@ -1,0 +1,72 @@
+name: ingest issue
+
+on:
+  issues:
+    types: [opened, labeled]
+
+concurrency:
+  group: scout-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  ingest:
+    if: startsWith(join(github.event.issue.labels.*.name, ','), 'scout:') || contains(join(github.event.issue.labels.*.name, ','), 'scout:')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only the repo owner may write notes
+        if: github.event.issue.user.login != github.repository_owner
+        run: |
+          echo "ignoring issue from ${{ github.event.issue.user.login }}"
+          exit 78
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install (no torch needed for ingest)
+        run: pip install --quiet -e .
+
+      - name: Write issue body to file
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: printf '%s' "$BODY" > /tmp/issue-body.md
+
+      - name: Ingest
+        id: ingest
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: |
+          scout ingest-issue --body-file /tmp/issue-body.md \
+            --labels "${{ join(github.event.issue.labels.*.name, ',') }}" \
+            --title "${{ github.event.issue.title }}" || echo "failed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit
+        run: |
+          git config user.name "scout[bot]"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add data notes
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "scout: ${{ github.event.issue.title }}"
+          git pull --rebase origin ${{ github.ref_name }}
+          git push
+
+      - name: Reply and close
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '(no summary)';
+            try { body = fs.readFileSync('data/last_ingest.md', 'utf8'); } catch {}
+            await github.rest.issues.createComment({ ...context.repo, issue_number: context.issue.number, body });
+            if ('${{ steps.ingest.outputs.failed }}' !== 'true') {
+              await github.rest.issues.update({ ...context.repo, issue_number: context.issue.number, state: 'closed', state_reason: 'completed' });
+            }

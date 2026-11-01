@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+:root {
+  --bg: #fbfaf7; --fg: #1d1c1a; --muted: #7a776f; --line: #e7e3da; --card: #ffffff;
+  --niche: #d9ecd9; --neighbourhood: #dde6f7; --field: #f6e3cf; --essential: #efdcf2; --want: #fbf1c7; --own: #e6e3f8; --skip: #eee;
+  --accent: #2f6f5e;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #15151a; --fg: #ebe8e1; --muted: #9a968d; --line: #2a2a31; --card: #1c1c22;
+    --niche: #2b4a35; --neighbourhood: #2b3a55; --field: #574026; --essential: #4a2f52; --want: #5a4d1a; --own: #3b3660; --skip: #333; --accent: #8fd1bb; }
+}
+* { box-sizing: border-box; }
+html { font-size: 15px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: 'Space Mono', ui-monospace, monospace; line-height: 1.55; text-transform: lowercase; }
+.keep { text-transform: none; }
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 80px; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; padding: 22px 0 10px; border-bottom: 1px solid var(--line); margin-bottom: 26px; align-items: baseline; }
+nav .brand { font-weight: 700; margin-right: auto; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a.on { color: var(--fg); }
+h1 { font-size: 1.15rem; font-weight: 700; margin: 0 0 6px; }
+h2 { font-size: 0.95rem; font-weight: 700; margin: 28px 0 10px; }
+.sub { color: var(--muted); margin: 0 0 18px; }
+a { color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 0 0 14px; }
+.card h3 { margin: 4px 0 2px; font-size: 1rem; font-weight: 700; }
+.card h3 a { color: var(--fg); text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.meta { color: var(--muted); font-size: 0.82rem; }
+.tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.74rem; margin-right: 6px; background: var(--skip); }
+.tag.niche { background: var(--niche); } .tag.neighbourhood { background: var(--neighbourhood); } .tag.field { background: var(--field); }
+.tag.essential { background: var(--essential); } .tag.want { background: var(--want); } .tag.own { background: var(--own); }
+.tag.deep { border: 1px solid var(--line); background: transparent; }
+.why { margin: 10px 0 4px; }
+.payoff { color: var(--muted); margin: 0 0 12px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 0.82rem; background: var(--bg); }
+.btn:hover { border-color: var(--fg); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.empty { color: var(--muted); padding: 30px 0; }
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { padding: 10px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 86px 1fr; gap: 12px; align-items: baseline; }
+.list li .d { color: var(--muted); font-size: 0.8rem; }
+input.search { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); font: inherit; text-transform: none; margin-bottom: 14px; }
+.note { white-space: normal; }
+.note p { margin: 0 0 10px; }
+.box { border-left: 3px solid var(--line); padding: 2px 0 2px 14px; margin: 10px 0 18px; }
+.box.gaps { border-color: var(--field); }
+.path .step { position: relative; padding: 0 0 22px 22px; border-left: 2px solid var(--line); }
+.path .step::before { content: ''; position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.path .step.linked::before { background: var(--accent); }
+.path .gap { color: var(--muted); font-size: 0.85rem; margin: 4px 0; }
+.path .arrow { color: var(--accent); font-size: 0.85rem; }
+.stat { display: inline-block; min-width: 120px; margin: 0 20px 14px 0; }
+.stat b { display: block; font-size: 1.5rem; }
+.bars { display: flex; gap: 4px; align-items: flex-end; height: 60px; }
+.bars div { background: var(--niche); flex: 1; border-radius: 3px 3px 0 0; min-height: 2px; }
+.banner { background: var(--want); border-radius: 8px; padding: 10px 14px; margin-bottom: 18px; font-size: 0.85rem; }
+footer { color: var(--muted); font-size: 0.78rem; margin-top: 50px; }

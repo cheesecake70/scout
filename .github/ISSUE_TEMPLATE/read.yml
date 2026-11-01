@@ -1,0 +1,37 @@
+name: "✅ I read this"
+description: Log a paper you read today. Two boxes. That's the whole practice.
+title: "read: "
+labels: ["scout:read"]
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: Paper
+      description: arXiv id, DOI, or URL. Pre-filled when you click from the site.
+      placeholder: "2501.12345"
+    validations:
+      required: true
+  - type: textarea
+    id: understood
+    attributes:
+      label: What I understood
+      description: In your own words. What is the idea, why does it work, what did they show?
+    validations:
+      required: true
+  - type: textarea
+    id: gaps
+    attributes:
+      label: Gaps
+      description: What didn't land? What would you need to read to get it? Tomorrow's picks come from this.
+    validations:
+      required: true
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Rating
+      options: ["", "5 · must-read", "4 · good", "3 · fine", "2 · meh", "1 · waste"]
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      placeholder: "rl, agents, video"

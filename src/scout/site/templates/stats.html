@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% set page='stats' %}{% set root='./' %}{% set page_title='stats' %}
+{% block body %}
+<h1>stats</h1>
+<p class="sub">just enough to know if the practice is working.</p>
+<div class="stat"><b>{{ stats.total }}</b>papers read</div>
+<div class="stat"><b>{{ stats.streak }}</b>day streak</div>
+<div class="stat"><b>{{ stats.gap_closed }}/{{ stats.with_gaps }}</b>gaps that led somewhere</div>
+<div class="stat"><b>{{ stats.skips }}</b>skips</div>
+<h2>by week</h2>
+<div class="bars">{% for (y,w),c in stats.weekly %}<div style="height:{{ (c*12)|int }}px" title="{{ y }}-w{{ w }}: {{ c }}"></div>{% endfor %}</div>
+<h2>lanes</h2>
+<p>{% for l,c in stats.lanes %}<span class="tag {{ l }}">{{ l }} {{ c }}</span>{% endfor %}</p>
+{% if stats.tags %}<h2>tags</h2><p>{% for t,c in stats.tags %}<span class="tag">{{ t }} {{ c }}</span>{% endfor %}</p>{% endif %}
+{% endblock %}

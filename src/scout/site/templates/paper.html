@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% set page='notes' %}{% set root='../' %}{% set page_title=n.title %}
+{% block body %}
+<span class="tag {{ n.lane }}">{{ n.lane }}</span><span class="tag deep">{{ n.depth }}</span>{% if n.rating %}<span class="tag">★{{ n.rating }}</span>{% endif %}
+<h1 class="keep">{{ n.title }}</h1>
+<p class="meta keep">{{ n.authors[:4]|join(', ') }}{% if n.authors|length > 4 %} et al.{% endif %}{% if n.venue %} · {{ n.venue }}{% endif %} · read {{ n.date }}
+  {% if n.url %} · <a href="{{ n.url }}" target="_blank" rel="noopener">abstract</a>{% endif %}{% if n.pdf_url %} · <a href="{{ n.pdf_url }}" target="_blank" rel="noopener">pdf</a>{% endif %}</p>
+{% if n.tags %}<p>{% for t in n.tags %}<span class="tag">{{ t }}</span>{% endfor %}</p>{% endif %}
+<h2>what i understood</h2>
+<div class="box note keep">{{ n.understood|md|safe }}</div>
+<h2>gaps</h2>
+<div class="box gaps note keep">{{ n.gaps|md|safe }}</div>
+{% if n.why %}<h2>why it was picked</h2><div class="box note keep">{{ n.why|md|safe }}</div>{% endif %}
+{% if led_from %}<h2>came from</h2><ul class="list">{% for m in led_from %}<li><span class="d">{{ m.date }}</span><a class="keep" href="{{ m.slug }}.html">{{ m.title }}</a></li>{% endfor %}</ul>{% endif %}
+{% if led_to %}<h2>led to</h2><ul class="list">{% for m in led_to %}<li><span class="d">{{ m.date }}</span><a class="keep" href="{{ m.slug }}.html">{{ m.title }}</a></li>{% endfor %}</ul>{% endif %}
+<p class="meta" style="margin-top:30px"><a href="https://github.com/{{ repo }}/edit/main/{{ rel }}">edit this note on github</a></p>
+{% endblock %}

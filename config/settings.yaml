@@ -1,0 +1,49 @@
+# scout settings. Everything here is safe to edit.
+
+schedule:
+  timezone: "Asia/Kolkata"   # IANA name
+  hour: 7                    # local hour the daily run should land in
+
+load:
+  papers_per_day: 3          # 1-3
+  deep_picks: 1              # how many are "read fully"; the rest are skims
+  essentials_every_n_days: 4 # replace the deep slot with a classic every N days
+  want_every_n_days: 3       # serve one want-queue paper in the deep slot at most every N days
+  missed_cooldown_days: 14   # unread picks become eligible again after this
+
+sources:
+  arxiv_categories: [cs.LG, cs.CL, cs.AI, cs.CV, cs.MM, stat.ML]
+  arxiv_lookback_days: 2
+  neighbourhood_recent_reads: 5    # how many of your latest reads seed the citation walk
+  author_follow_min_rating: 4
+  venues:                          # conferences to watch (via Semantic Scholar venue filter)
+    - { name: ICLR, year: 2026 }
+    - { name: NeurIPS, year: 2025 }
+    - { name: ICML, year: 2025 }
+  openreview_venues: []            # optional, needs OPENREVIEW_TOKEN, e.g. ICLR.cc/2026/Conference
+  hf_daily: true
+
+topics:
+  # name: weight. Matched against paper text by embedding similarity to the phrase.
+  "LLM post-training, RL for reasoning, agents and tool use": 1.0
+  "vision-language and generative image/video models": 0.7
+  "evaluation and benchmarks for LLMs and agents": 0.5
+
+ranking:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  gap_weight: 0.5
+  popularity_penalty: 0.15        # subtracted from niche score when a paper is trending / highly cited
+  popularity_citation_threshold: 200
+  diversity_max_cosine: 0.85
+  relevance_floor: 0.25           # field-lane picks must clear this similarity to profile
+
+llm:
+  provider_order: [anthropic, gemini, groq]
+  models:
+    anthropic: "claude-sonnet-5-5"
+    gemini: "gemini-2.5-flash"
+    groq: "llama-3.3-70b-versatile"
+
+site:
+  title: "scout"
+  base_url: ""                    # set by the Pages workflow; leave empty locally

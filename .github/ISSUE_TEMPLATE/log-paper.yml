@@ -1,0 +1,33 @@
+name: "📝 I read something else"
+description: Log a paper you found on your own. Same two boxes.
+title: "log: "
+labels: ["scout:log"]
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: Paper
+      description: arXiv id, DOI, or URL.
+    validations:
+      required: true
+  - type: textarea
+    id: understood
+    attributes:
+      label: What I understood
+    validations:
+      required: true
+  - type: textarea
+    id: gaps
+    attributes:
+      label: Gaps
+    validations:
+      required: true
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Rating
+      options: ["", "5 · must-read", "4 · good", "3 · fine", "2 · meh", "1 · waste"]
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
