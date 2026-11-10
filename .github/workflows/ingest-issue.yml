@@ -14,7 +14,14 @@ permissions:
 
 jobs:
   ingest:
-    if: startsWith(join(github.event.issue.labels.*.name, ','), 'scout:') || contains(join(github.event.issue.labels.*.name, ','), 'scout:')
+    # trigger on a scout:* label OR a form title prefix (labels are dropped if they don't exist in the repo yet)
+    if: >-
+      contains(join(github.event.issue.labels.*.name, ','), 'scout:')
+      || startsWith(github.event.issue.title, 'read:')
+      || startsWith(github.event.issue.title, 'log:')
+      || startsWith(github.event.issue.title, 'want:')
+      || startsWith(github.event.issue.title, 'skip:')
+      || github.event.issue.title == 'bootstrap feedback'
     runs-on: ubuntu-latest
     steps:
       - name: Only the repo owner may write notes
