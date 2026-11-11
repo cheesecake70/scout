@@ -102,8 +102,10 @@ def run_daily(settings: Settings, *, dry_run: bool = False, no_llm: bool = False
         gap_text = "\n\n".join(f"- ({n.title}) {n.gaps}" for n in V.gap_notes[:5])
         if llm:
             gap_queries = llm.gap_queries(gap_text) or []
+        gap_queries = [q.strip("-•* \n") for q in gap_queries]
+        gap_queries = [q for q in gap_queries if len(q) > 6]
         if not gap_queries:
-            gap_queries = [n.gaps.split(".")[0][:120] for n in V.gap_notes[:2]]
+            gap_queries = [n.gaps.strip("-•* \n").split(".")[0][:120] for n in V.gap_notes[:2]]
     log.info("gap queries: %s", gap_queries)
 
     cands = gather(settings, notes, gap_queries)
