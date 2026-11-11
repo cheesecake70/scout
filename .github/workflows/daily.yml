@@ -2,8 +2,9 @@ name: daily
 
 on:
   schedule:
-    # runs every hour; the job itself checks whether it's the configured local hour (DST-safe)
-    - cron: "7 * * * *"
+    # GitHub fires scheduled runs late and irregularly; this runs every 30 min and the job itself
+    # runs once per day, on the first firing at or after the configured local hour (DST-safe)
+    - cron: "7,37 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -46,7 +47,7 @@ jobs:
           except Exception: pass
           already = now.date().isoformat() in state.get("run_days", [])
           forced = os.environ.get("FORCE", "false") == "true"
-          go = forced or (now.hour == hour and not already)
+          go = forced or (now.hour >= hour and not already)
           print(f"go={'true' if go else 'false'}")
           print(f"why=local {now:%Y-%m-%d %H:%M} {tz.key}; target hour {hour}; already ran today: {already}; forced: {forced}")
           PY
