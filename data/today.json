@@ -1,70 +1,96 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-11",
   "picks": [
     {
       "paper": {
-        "id": "2611.03517",
-        "title": "Ask, Don't Equip: Question-Driven Coding Agents for Deep Kernel Optimization",
-        "abstract": "LLM agents for GPU kernel optimization sit at two ends of a structure-freedom tradeoff. Scripted agents fix what the model does at each step, via a learned policy, an optimization menu, or fixed roles, and are sample-efficient where the recipe applies and stall where it does not. Open-ended agents let a self-directed model mutate a population of kernels and pay for the freedom in trials: thousands of evaluations, repeated edits, and wrong candidates. Both respond to hard targets by equipping the agent with more: parsed profiler output, disassembly analysis, retrieval over documentation and libraries, and stores of lessons. We argue that both lack direction, a hypothesis about where the remaining gap is, and that a short question asked at the right moment supplies it without narrowing what the agent may do next. We present KernelSeek, a question-driven agent that makes an existing CUDA kernel faster with no operator-specific knowledge and no faster implementation to imitate: a general-purpose coding agent, a minimal harness that enforces a verifiable goal, and questions at decision points, first from a human, then from a bank the agent applies to itself. On the same task, evaluator, hardware, and week, a tool-rich autonomous agent built in the prevailing style plateaued at 0.50x FlashAttention-3 after 133 model-driven steps; KernelSeek reached 1.13x. It then produced dependency-free FlashAttention forward kernels for Hopper and Blackwell, single CUDA files with no CUTLASS, CuTe, cuBLAS, or cuDNN, correct on all 182 scenarios per architecture and 1.16x FlashAttention-3 and 1.46x FlashAttention-4 (geometric mean). Across 162 human messages and 11.5K agent tool calls, every large gain followed a question that moved the agent to a different layer of the system or rejected a claimed limit, never one that supplied information. We release the kernels, harness, question bank, and all traces.",
+        "id": "2201.12086",
+        "title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
+        "abstract": "Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision. In this paper, we propose BLIP, a new VLP framework which transfers flexibly to both vision-language understanding and generation tasks. BLIP effectively utilizes the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. We achieve state-of-the-art results on a wide range of vision-language tasks, such as image-text retrieval (+2.7% in average recall@1), image captioning (+2.8% in CIDEr), and VQA (+1.6% in VQA score). BLIP also demonstrates strong generalization ability when directly transferred to video-language tasks in a zero-shot manner. Code, models, and datasets are released at https://github.com/salesforce/BLIP.",
         "authors": [
-          "Gabriele Oliaro",
-          "Jaeseong Lee",
-          "Zhaoyuan Su",
-          "Sreeram Vennam",
-          "Zhihao Jia",
-          "Samyam Rajbhandari"
+          "Junnan Li",
+          "Dongxu Li",
+          "Cai-Ming Xiong",
+          "S. Hoi"
         ],
-        "published": "2026-11-02",
-        "url": "https://arxiv.org/abs/2611.03517",
-        "pdf_url": "https://arxiv.org/pdf/2611.03517",
-        "venue": "arXiv",
-        "arxiv_id": "2611.03517",
-        "doi": null,
-        "s2_id": null,
-        "citation_count": null,
-        "influential_citation_count": null,
-        "hf_upvotes": 3,
-        "source_lanes": [
-          "field"
-        ],
-        "source_reason": "trending on HF Daily Papers"
+        "published": "2022-01-28",
+        "url": "https://www.semanticscholar.org/paper/a3b42a83669998f65df60d7c065a70d07ca95e99",
+        "pdf_url": "http://arxiv.org/pdf/2201.12086",
+        "venue": "International Conference on Machine Learning",
+        "arxiv_id": "2201.12086",
+        "doi": "10.48550/arXiv.2201.12086",
+        "s2_id": "a3b42a83669998f65df60d7c065a70d07ca95e99",
+        "citation_count": 7667,
+        "influential_citation_count": 774,
+        "hf_upvotes": null,
+        "source_lanes": [],
+        "source_reason": "essential on 'vision-language and generative image/video models'"
       },
-      "lane": "niche",
+      "lane": "essential",
       "depth": "deep",
-      "score": 0.5992,
-      "why": "trending on HF Daily Papers",
-      "payoff": "LLM agents for GPU kernel optimization sit at two ends of a structure-freedom tradeoff. Scripted agents fix what the model does at each step, via a learned policy, an optimization menu, or fixed roles, and are sample-efficient where the recipe applies and stall where it does not.…",
+      "score": 1.0,
+      "why": "essential on 'vision-language and generative image/video models'",
+      "payoff": "Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by sc…",
       "led_from": []
     },
     {
       "paper": {
-        "id": "2610.37697",
-        "title": "chATLAS: A Retrieval-Augmented Conversational Assistant for the ATLAS Experiment",
-        "abstract": "Large scientific collaborations produce extensive internal documentation spread across heterogeneous systems, making it difficult for collaborators to locate and reuse existing knowledge. We present chATLAS, a deployed Retrieval-Augmented Generation (RAG) assistant developed for the ATLAS experiment at CERN. The system provides conversational access to more than 30,000 documents from several collaboration resources, material largely unavailable to general-purpose language models, using hybrid dense--sparse retrieval deployed on CERN infrastructure. A domain-specific benchmark built from automatically generated question--answer pairs is used to evaluate retrieval and generation performance and to guide design choices. We study the selection and domain-specific fine-tuning of an embedding model, contextual retrieval, ranking strategies, and generator choice. Fine-tuning combined with contextual retrieval more than doubles how often the correct document is returned as the top result on the most technically challenging documentation source. The deployed system also includes intent routing, safety handling, Mattermost integration, and an MCP server for future agentic workflows. chATLAS demonstrates that domain-adapted RAG can provide source-attributed, domain-specific access to collaboration knowledge, and offers a practical foundation for scientific collaborations and other organisations that rely on accurate, up-to-date retrieval from proprietary documentation.",
+        "id": "2603.10085",
+        "title": "KernelClaw: A Multi-Agent Framework for GPU Kernel Optimization with Dual-Memory Mechanisms",
+        "abstract": "Improving GPU kernel efficiency is crucial for efficient AI systems. Recent work has explored leveraging large language models (LLMs) for GPU kernel generation and optimization. However, existing LLM-based kernel optimization pipelines typically rely on opaque, implicitly learned heuristics within the LLMs to determine optimization strategies. This leads to inefficient trial-and-error and weakly interpretable optimizations. Our key insight is to replace implicit heuristics with expert optimization knowledge that is aware of task trajectories. Specifically, we present KernelClaw, a multi-agent framework with a dual-level memory architecture. KernelClaw operates by coordinating agents with long-term memory of reusable expert knowledge and short-term memory to prevent repetitive backtracking. On KernelBench Levels 1-3, KernelClaw achieves a 100% success rate and average speedups of 6.98x, 7.89x, and 1.94x over Torch Eager on Levels 1, 2, and 3, respectively, outperforming prior baselines. Code is available at https://github.com/0satan0/KernelMem/.",
         "authors": [
-          "Joe Egan",
-          "Ben Elliot",
-          "S. Van Stroud",
-          "Alex Sopio",
-          "Ki Ryeong Park",
-          "D. Dal Santo",
-          "Zhao-Hui Li",
-          "Run-Ze Li",
-          "J. Couthures",
-          "Joey F. George",
-          "Cary Randazzo",
-          "J. Beringer",
-          "D. Murnane",
-          "G. Facini"
+          "Qi-Tong Sun",
+          "Jun Han",
+          "Tian-Lin Li",
+          "Zhezhe Tang",
+          "Sheng Chen",
+          "Fei Yang",
+          "Ai-Shan Liu",
+          "Xiang-Long Liu",
+          "Yang Liu"
         ],
-        "published": "2026-10-24",
-        "url": "https://www.semanticscholar.org/paper/7632d939c9b68b2475f7a1019c8a953ce3fa97fd",
-        "pdf_url": "https://arxiv.org/pdf/2610.37697",
+        "published": "2026-03-10",
+        "url": "https://www.semanticscholar.org/paper/320874432d73388d98ba91dd8c4ccf4e34faf5cf",
+        "pdf_url": "https://arxiv.org/pdf/2603.10085",
         "venue": "arXiv",
-        "arxiv_id": "2610.37697",
+        "arxiv_id": "2603.10085",
         "doi": null,
-        "s2_id": "7632d939c9b68b2475f7a1019c8a953ce3fa97fd",
-        "citation_count": 0,
+        "s2_id": "320874432d73388d98ba91dd8c4ccf4e34faf5cf",
+        "citation_count": 17,
+        "influential_citation_count": 1,
+        "hf_upvotes": null,
+        "source_lanes": [
+          "neighbourhood"
+        ],
+        "source_reason": "cited by 2611.03517"
+      },
+      "lane": "niche",
+      "depth": "skim",
+      "score": 0.8549,
+      "why": "cited by 2611.03517",
+      "payoff": "Improving GPU kernel efficiency is crucial for efficient AI systems. Recent work has explored leveraging large language models (LLMs) for GPU kernel generation and optimization. However, existing LLM-based kernel optimization pipelines typically rely on opaque, implicitly learned…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2610.15208",
+        "title": "PANINI-DR: Controlled Deep Research through Generative Semantic Workspaces",
+        "abstract": "Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subsequent work. We introduce PANINI-DR, a multi-agent harness that separates coordination of the overall investigation from the research and verification of individual subquestions. A shared workspace, built on the Generative Semantic Workspace representation, records subquestions, their dependencies, findings, and supporting evidence. Researchers investigate individual subquestions, while a separate verification agent checks proposed answers against those subquestions and their evidence. Verification feedback guides further investigation, and recorded findings inform subsequent assignments. We evaluate PANINI-DR on BrowseComp-Plus, FRAMES, and MoNaCo against seven state-of-the-art deep-research harnesses, all using a shared language-model backbone and frozen corpora. PANINI-DR achieves the strongest average performance across the three benchmarks. On BrowseComp-Plus, it achieves 73.3% accuracy, outperforming the next-best harness by 16.0 points. Its advantage is strongest on hard questions, where it answers nearly twice as many as the next-best harness. Ablations further show that structured planning and persistent state improve performance, as does checking each finding against its cited evidence before it is reused. Because a model can answer correctly from memory alone, we also analyze the evidence retained by each harness. PANINI-DR achieves the highest answer recoverability from saved evidence on all three benchmarks, while complementary claim-support audits show stronger evidence-backed answers. Accounting for this evidence changes how harnesses compare and further strengthens PANINI-DR's advantage.",
+        "authors": [
+          "M. Y. Turali",
+          "Shreyas Rajesh",
+          "M. E. Lorasdagi",
+          "Chen-Da Duan",
+          "Kartik Sharma",
+          "V. Roychowdhury"
+        ],
+        "published": "2026-10-10",
+        "url": "https://www.semanticscholar.org/paper/c009c47aa8e49fd4b16ece824bb7a7d9f42ff53a",
+        "pdf_url": "https://arxiv.org/pdf/2610.15208",
+        "venue": "arXiv",
+        "arxiv_id": "2610.15208",
+        "doi": null,
+        "s2_id": "c009c47aa8e49fd4b16ece824bb7a7d9f42ff53a",
+        "citation_count": 1,
         "influential_citation_count": 0,
         "hf_upvotes": null,
         "source_lanes": [
@@ -74,61 +100,15 @@
       },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.4367,
+      "score": 0.5713,
       "why": "S2 recommendation from your reads",
-      "payoff": "Large scientific collaborations produce extensive internal documentation spread across heterogeneous systems, making it difficult for collaborators to locate and reuse existing knowledge. We present chATLAS, a deployed Retrieval-Augmented Generation (RAG) assistant developed for …",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.08449",
-        "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
-        "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
-        "authors": [
-          "Yu-Cheng Chou",
-          "Shihao Wang",
-          "Jin Huang",
-          "Chi-Pin Huang",
-          "Chiao-An Yang",
-          "Xianzhe Fan",
-          "Jing Wang",
-          "Zhiqi Li",
-          "Yuanguo Kuang",
-          "Ruijie Zheng",
-          "Johan Bjorck",
-          "Sifei Liu",
-          "Hang Su",
-          "Abhishek Badki",
-          "Lei Zhang",
-          "Alan Yuille",
-          "Linxi \"Jim'' Fan",
-          "Jan Kautz",
-          "Zhiding Yu"
-        ],
-        "published": "2026-11-05",
-        "url": "https://arxiv.org/abs/2611.08449",
-        "pdf_url": "https://arxiv.org/pdf/2611.08449v1",
-        "venue": "arXiv cs.RO",
-        "arxiv_id": "2611.08449",
-        "doi": null,
-        "s2_id": null,
-        "citation_count": null,
-        "influential_citation_count": null,
-        "hf_upvotes": 98,
-        "source_lanes": [
-          "niche",
-          "field"
-        ],
-        "source_reason": "new on arXiv; trending on HF Daily Papers"
-      },
-      "lane": "field",
-      "depth": "skim",
-      "score": 0.5788,
-      "why": "new on arXiv; trending on HF Daily Papers",
-      "payoff": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generat…",
+      "payoff": "Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subs…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-07T17:07:35.793450Z",
-  "gap_queries": []
+  "generated_at": "2026-11-11T09:21:07.913488Z",
+  "gap_queries": [
+    "-",
+    "i think its a very new approach, and deeper kernels are not working with it yet"
+  ]
 }
