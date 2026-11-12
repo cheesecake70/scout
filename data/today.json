@@ -1,114 +1,114 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "picks": [
     {
       "paper": {
-        "id": "2201.12086",
-        "title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
-        "abstract": "Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision. In this paper, we propose BLIP, a new VLP framework which transfers flexibly to both vision-language understanding and generation tasks. BLIP effectively utilizes the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. We achieve state-of-the-art results on a wide range of vision-language tasks, such as image-text retrieval (+2.7% in average recall@1), image captioning (+2.8% in CIDEr), and VQA (+1.6% in VQA score). BLIP also demonstrates strong generalization ability when directly transferred to video-language tasks in a zero-shot manner. Code, models, and datasets are released at https://github.com/salesforce/BLIP.",
+        "id": "2510.16996",
+        "title": "STARK: Strategic Team of Agents for Refining Kernels",
+        "abstract": "The efficiency of GPU kernels is central to the progress of modern AI, yet optimizing them remains a difficult and labor-intensive task due to complex interactions between memory hierarchies, thread scheduling, and hardware-specific characteristics. While recent advances in large language models (LLMs) provide new opportunities for automated code generation, existing approaches largely treat LLMs as single-shot generators or naive refinement tools, limiting their effectiveness in navigating the irregular kernel optimization landscape. We introduce an LLM agentic framework for GPU kernel optimization that systematically explores the design space through multi-agent collaboration, grounded instruction, dynamic context management, and strategic search. This framework mimics the workflow of expert engineers, enabling LLMs to reason about hardware trade-offs, incorporate profiling feedback, and refine kernels iteratively. We evaluate our approach on KernelBench, a benchmark for LLM-based kernel optimization, and demonstrate substantial improvements over baseline agents: our system produces correct solutions where baselines often fail, and achieves kernels with up to 16x faster runtime performance. These results highlight the potential of agentic LLM frameworks to advance fully automated, scalable GPU kernel optimization.",
         "authors": [
-          "Junnan Li",
-          "Dongxu Li",
-          "Cai-Ming Xiong",
-          "S. Hoi"
+          "Jun-Cheng Dong",
+          "Yang Yang",
+          "Tao Liu",
+          "Yang Wang",
+          "F. Qi",
+          "Vahid Tarokh",
+          "Kaushik Rangadurai",
+          "Shuang Yang"
         ],
-        "published": "2022-01-28",
-        "url": "https://www.semanticscholar.org/paper/a3b42a83669998f65df60d7c065a70d07ca95e99",
-        "pdf_url": "http://arxiv.org/pdf/2201.12086",
-        "venue": "International Conference on Machine Learning",
-        "arxiv_id": "2201.12086",
-        "doi": "10.48550/arXiv.2201.12086",
-        "s2_id": "a3b42a83669998f65df60d7c065a70d07ca95e99",
-        "citation_count": 7667,
-        "influential_citation_count": 774,
-        "hf_upvotes": null,
-        "source_lanes": [],
-        "source_reason": "essential on 'vision-language and generative image/video models'"
-      },
-      "lane": "essential",
-      "depth": "deep",
-      "score": 1.0,
-      "why": "essential on 'vision-language and generative image/video models'",
-      "payoff": "Vision-Language Pre-training (VLP) has advanced the performance for many vision-language tasks. However, most existing pre-trained models only excel in either understanding-based tasks or generation-based tasks. Furthermore, performance improvement has been largely achieved by sc…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2603.10085",
-        "title": "KernelClaw: A Multi-Agent Framework for GPU Kernel Optimization with Dual-Memory Mechanisms",
-        "abstract": "Improving GPU kernel efficiency is crucial for efficient AI systems. Recent work has explored leveraging large language models (LLMs) for GPU kernel generation and optimization. However, existing LLM-based kernel optimization pipelines typically rely on opaque, implicitly learned heuristics within the LLMs to determine optimization strategies. This leads to inefficient trial-and-error and weakly interpretable optimizations. Our key insight is to replace implicit heuristics with expert optimization knowledge that is aware of task trajectories. Specifically, we present KernelClaw, a multi-agent framework with a dual-level memory architecture. KernelClaw operates by coordinating agents with long-term memory of reusable expert knowledge and short-term memory to prevent repetitive backtracking. On KernelBench Levels 1-3, KernelClaw achieves a 100% success rate and average speedups of 6.98x, 7.89x, and 1.94x over Torch Eager on Levels 1, 2, and 3, respectively, outperforming prior baselines. Code is available at https://github.com/0satan0/KernelMem/.",
-        "authors": [
-          "Qi-Tong Sun",
-          "Jun Han",
-          "Tian-Lin Li",
-          "Zhezhe Tang",
-          "Sheng Chen",
-          "Fei Yang",
-          "Ai-Shan Liu",
-          "Xiang-Long Liu",
-          "Yang Liu"
-        ],
-        "published": "2026-03-10",
-        "url": "https://www.semanticscholar.org/paper/320874432d73388d98ba91dd8c4ccf4e34faf5cf",
-        "pdf_url": "https://arxiv.org/pdf/2603.10085",
-        "venue": "arXiv",
-        "arxiv_id": "2603.10085",
-        "doi": null,
-        "s2_id": "320874432d73388d98ba91dd8c4ccf4e34faf5cf",
-        "citation_count": 17,
-        "influential_citation_count": 1,
+        "published": "2025-10-19",
+        "url": "https://www.semanticscholar.org/paper/f94347dcec03e03488bf7217310414027c10d0c1",
+        "pdf_url": "https://arxiv.org/pdf/2510.16996",
+        "venue": "International Conference on Learning Representations",
+        "arxiv_id": "2510.16996",
+        "doi": "10.48550/arXiv.2510.16996",
+        "s2_id": "f94347dcec03e03488bf7217310414027c10d0c1",
+        "citation_count": 32,
+        "influential_citation_count": 4,
         "hf_upvotes": null,
         "source_lanes": [
           "neighbourhood"
         ],
-        "source_reason": "cited by 2611.03517"
+        "source_reason": "cited by 2603.10085"
       },
       "lane": "niche",
-      "depth": "skim",
-      "score": 0.8549,
-      "why": "cited by 2611.03517",
-      "payoff": "Improving GPU kernel efficiency is crucial for efficient AI systems. Recent work has explored leveraging large language models (LLMs) for GPU kernel generation and optimization. However, existing LLM-based kernel optimization pipelines typically rely on opaque, implicitly learned…",
+      "depth": "deep",
+      "score": 0.9042,
+      "why": "cited by 2603.10085",
+      "payoff": "The efficiency of GPU kernels is central to the progress of modern AI, yet optimizing them remains a difficult and labor-intensive task due to complex interactions between memory hierarchies, thread scheduling, and hardware-specific characteristics. While recent advances in large…",
       "led_from": []
     },
     {
       "paper": {
-        "id": "2610.15208",
-        "title": "PANINI-DR: Controlled Deep Research through Generative Semantic Workspaces",
-        "abstract": "Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subsequent work. We introduce PANINI-DR, a multi-agent harness that separates coordination of the overall investigation from the research and verification of individual subquestions. A shared workspace, built on the Generative Semantic Workspace representation, records subquestions, their dependencies, findings, and supporting evidence. Researchers investigate individual subquestions, while a separate verification agent checks proposed answers against those subquestions and their evidence. Verification feedback guides further investigation, and recorded findings inform subsequent assignments. We evaluate PANINI-DR on BrowseComp-Plus, FRAMES, and MoNaCo against seven state-of-the-art deep-research harnesses, all using a shared language-model backbone and frozen corpora. PANINI-DR achieves the strongest average performance across the three benchmarks. On BrowseComp-Plus, it achieves 73.3% accuracy, outperforming the next-best harness by 16.0 points. Its advantage is strongest on hard questions, where it answers nearly twice as many as the next-best harness. Ablations further show that structured planning and persistent state improve performance, as does checking each finding against its cited evidence before it is reused. Because a model can answer correctly from memory alone, we also analyze the evidence retained by each harness. PANINI-DR achieves the highest answer recoverability from saved evidence on all three benchmarks, while complementary claim-support audits show stronger evidence-backed answers. Accounting for this evidence changes how harnesses compare and further strengthens PANINI-DR's advantage.",
+        "id": "2511.01884",
+        "title": "CudaForge: An Agent Framework with Hardware Feedback for CUDA Kernel Optimization",
+        "abstract": "Developing efficient CUDA kernels is increasingly critical for AI applications such as large-scale LLM training. However, manual kernel design is both costly and time-consuming, motivating automatic approaches that leverage LLMs for code generation. Existing methods for automatic kernel generation, however, often produce low-efficiency kernels, incur high computational overhead, and fail to generalize across settings. In this work, we propose CudaForge, a training-free multi-agent workflow for CUDA kernel generation and optimization. Our workflow is inspired by the iterative workflow of human experts, which contains steps such as developing initial kernels, testing correctness, analyzing hardware feedback, and iterative improvement. More specifically, CudaForge employs two LLM agents: a Coder and a Judge, that iteratively generate, correct, and optimize CUDA kernels, while integrating hardware feedback such as Nsight Compute (NCU) metrics. In extensive evaluations, we show that CudaForge, by leveraging base models like OpenAI-o3, achieves 97.6\\% correctness of generated kernels and an average 1.68$\\times$ speedup over PyTorch baselines, substantially surpassing state-of-the-art models including OpenAI-o3 and Kevin on KernelBench.Beyond accuracy and speed, CudaForge demonstrates strong generalization across GPUs (A100, RTX 6000, 4090, 3090) and base models (OpenAI-o3, GPT-5, gpt-oss-120B, Claude-Sonnet-4, QwQ-32B), while maintaining high efficiency. In particular, generating an optimized kernel takes about 26.5 minutes on one RTX6000 and incurs about \\$ 0.3 API cost, which is significantly cheaper than existing agentic work that costs 6 H100 hours and \\$ 5 API cost per kernel. Our results highlight that multi-agent, training-free workflows can enable cost-effective, generalizable, and high-performance CUDA kernel optimization. Code available at https://github.com/OptimAI-Lab/CudaForge",
         "authors": [
-          "M. Y. Turali",
-          "Shreyas Rajesh",
-          "M. E. Lorasdagi",
-          "Chen-Da Duan",
-          "Kartik Sharma",
-          "V. Roychowdhury"
+          "Zijian Zhang",
+          "Ron Yifeng Wang",
+          "Shi-Yang Li",
+          "Yue-Bo Luo",
+          "Ming-Yi Hong",
+          "Caiwen Ding"
         ],
-        "published": "2026-10-10",
-        "url": "https://www.semanticscholar.org/paper/c009c47aa8e49fd4b16ece824bb7a7d9f42ff53a",
-        "pdf_url": "https://arxiv.org/pdf/2610.15208",
-        "venue": "arXiv",
-        "arxiv_id": "2610.15208",
-        "doi": null,
-        "s2_id": "c009c47aa8e49fd4b16ece824bb7a7d9f42ff53a",
-        "citation_count": 1,
-        "influential_citation_count": 0,
+        "published": "2025-10-23",
+        "url": "https://www.semanticscholar.org/paper/6686dea6a06ccfbc97785f2b43ed374848cb3683",
+        "pdf_url": "https://arxiv.org/pdf/2511.01884",
+        "venue": "arXiv.org",
+        "arxiv_id": "2511.01884",
+        "doi": "10.48550/arXiv.2511.01884",
+        "s2_id": "6686dea6a06ccfbc97785f2b43ed374848cb3683",
+        "citation_count": 67,
+        "influential_citation_count": 7,
         "hf_upvotes": null,
         "source_lanes": [
           "neighbourhood"
         ],
-        "source_reason": "S2 recommendation from your reads"
+        "source_reason": "cited by 2603.10085"
       },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.5713,
-      "why": "S2 recommendation from your reads",
-      "payoff": "Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subs…",
+      "score": 0.641,
+      "why": "cited by 2603.10085",
+      "payoff": "Developing efficient CUDA kernels is increasingly critical for AI applications such as large-scale LLM training. However, manual kernel design is both costly and time-consuming, motivating automatic approaches that leverage LLMs for code generation. Existing methods for automatic…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2611.14210",
+        "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+        "abstract": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million tokens, and 50 forward-pass requests. Our method, Tree-Ising, casts this repair as a sparse discrete optimization problem over the model's own BF16 weights. Forward statistics define an objective that weakens a loop direction, strengthens a concluding direction, and preserves the layer's output on productive tokens. Within a state-tree representation, where lossless BF16 storage acts as a special case, the admissible edits are sign flips and exponent shifts that preserve all shared group exponents and mantissas. We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation. On the agent's two layers, Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol, while the base model scores 7.9% as reported. The simulated bifurcation solver yields a statistically indistinguishable repair at 55.1%. Both solvers outperform the agent edit across all five math benchmarks, with statistically significant improvements on MATH-500 and GSM8K after correcting for multiple comparisons. Our approach modifies 13% to 17% fewer weights and reduces BF16 bit flips by a factor of 2.2 to 2.3. It requires only four forward-pass requests and zero LLM tokens, with the annealing recipe costing about $0.90 in GPU time. On Qwen3.5-2B, with layers and dose selected using only the base model, the same recipe increases greedy GSM8K accuracy from 21.6% to 69.4%. As a proof of concept, we execute an eight-variable repair subproblem using QAOA on an IBM Heron processor.",
+        "authors": [
+          "Hadi Salloum",
+          "Ammar Ali"
+        ],
+        "published": "2026-11-10",
+        "url": "https://arxiv.org/abs/2611.14210",
+        "pdf_url": "https://arxiv.org/pdf/2611.14210v1",
+        "venue": "arXiv cs.LG",
+        "arxiv_id": "2611.14210",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": 78,
+        "source_lanes": [
+          "niche",
+          "field"
+        ],
+        "source_reason": "new on arXiv; trending on HF Daily Papers"
+      },
+      "lane": "field",
+      "depth": "skim",
+      "score": 0.5093,
+      "why": "new on arXiv; trending on HF Daily Papers",
+      "payoff": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million toke…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-11T09:21:07.913488Z",
+  "generated_at": "2026-11-12T07:05:11.553270Z",
   "gap_queries": [
-    "-",
-    "i think its a very new approach, and deeper kernels are not working with it yet"
+    "model-based judgments can be incorrect, and checking individual findings cannot guarantee that the plan covers everythin",
+    "unseen optimization opportunities may not match the current method taxonomy or decision rules"
   ]
 }
