@@ -1,3 +1,1 @@
-✅ Logged **DIMWIT: Directly Invoking Models Without Intensive Tuning** → `notes/2026/11/2611.01463.md`
-
-Your gaps will shape tomorrow's picks.
+⏭ Skipped **KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning**. It won't come back.
