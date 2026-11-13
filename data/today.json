@@ -1,65 +1,91 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "picks": [
     {
       "paper": {
-        "id": "2510.16996",
-        "title": "STARK: Strategic Team of Agents for Refining Kernels",
-        "abstract": "The efficiency of GPU kernels is central to the progress of modern AI, yet optimizing them remains a difficult and labor-intensive task due to complex interactions between memory hierarchies, thread scheduling, and hardware-specific characteristics. While recent advances in large language models (LLMs) provide new opportunities for automated code generation, existing approaches largely treat LLMs as single-shot generators or naive refinement tools, limiting their effectiveness in navigating the irregular kernel optimization landscape. We introduce an LLM agentic framework for GPU kernel optimization that systematically explores the design space through multi-agent collaboration, grounded instruction, dynamic context management, and strategic search. This framework mimics the workflow of expert engineers, enabling LLMs to reason about hardware trade-offs, incorporate profiling feedback, and refine kernels iteratively. We evaluate our approach on KernelBench, a benchmark for LLM-based kernel optimization, and demonstrate substantial improvements over baseline agents: our system produces correct solutions where baselines often fail, and achieves kernels with up to 16x faster runtime performance. These results highlight the potential of agentic LLM frameworks to advance fully automated, scalable GPU kernel optimization.",
+        "id": "2611.01463",
+        "title": "DIMWIT: Directly Invoking Models Without Intensive Tuning",
+        "abstract": "Resource managers typically encode what to do in a task-specific policy---a heuristic, an optimization procedure, or a model trained for the task---that must be developed before use and may need revision as the workload or system changes. We propose bypassing policy development and instead asking pretrained models to make resource-management decisions directly, given the current system state, desired outcome, and available choices. We evaluate this approach on microservice autoscaling, DRAM sizing, and video encoding, using a frontier LLM and two small decision models. On two microservice applications, a small decision model meets latency targets while using within 10% of the replicas allocated by policy-based autoscalers and within 13% of the frontier LLM. In DRAM sizing, a small decision model reduces DRAM usage by up to 27.5% relative to static provisioning while maintaining at least 95% of baseline performance. In video encoding, it completes encodes up to 4.3$\\times$ faster than the frontier LLM, with an imperceptible 1.1-point decrease in Video Multi-Method Assessment Fusion (VMAF), a metric of perceptual video quality. Making individual resource-management decisions may be considerably simpler than developing a general strategy for making them.",
         "authors": [
-          "Jun-Cheng Dong",
-          "Yang Yang",
-          "Tao Liu",
-          "Yang Wang",
-          "F. Qi",
-          "Vahid Tarokh",
-          "Kaushik Rangadurai",
-          "Shuang Yang"
+          "Saarth Deshpande",
+          "Neeraja J. Yadwadkar",
+          "Venkat Arun"
         ],
-        "published": "2025-10-19",
-        "url": "https://www.semanticscholar.org/paper/f94347dcec03e03488bf7217310414027c10d0c1",
-        "pdf_url": "https://arxiv.org/pdf/2510.16996",
-        "venue": "International Conference on Learning Representations",
-        "arxiv_id": "2510.16996",
-        "doi": "10.48550/arXiv.2510.16996",
-        "s2_id": "f94347dcec03e03488bf7217310414027c10d0c1",
-        "citation_count": 32,
-        "influential_citation_count": 4,
+        "published": "2026-11-01",
+        "url": "https://arxiv.org/abs/2611.01463",
+        "pdf_url": "https://arxiv.org/pdf/2611.01463v1",
+        "venue": "arXiv cs.PF",
+        "arxiv_id": "2611.01463",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
         "hf_upvotes": null,
-        "source_lanes": [
-          "neighbourhood"
-        ],
-        "source_reason": "cited by 2603.10085"
+        "source_lanes": [],
+        "source_reason": "you asked for it"
       },
-      "lane": "niche",
+      "lane": "want",
       "depth": "deep",
-      "score": 0.9042,
-      "why": "cited by 2603.10085",
-      "payoff": "The efficiency of GPU kernels is central to the progress of modern AI, yet optimizing them remains a difficult and labor-intensive task due to complex interactions between memory hierarchies, thread scheduling, and hardware-specific characteristics. While recent advances in large…",
+      "score": 1.0,
+      "why": "you asked for it",
+      "payoff": "Resource managers typically encode what to do in a task-specific policy---a heuristic, an optimization procedure, or a model trained for the task---that must be developed before use and may need revision as the workload or system changes. We propose bypassing policy development a…",
       "led_from": []
     },
     {
       "paper": {
-        "id": "2511.01884",
-        "title": "CudaForge: An Agent Framework with Hardware Feedback for CUDA Kernel Optimization",
-        "abstract": "Developing efficient CUDA kernels is increasingly critical for AI applications such as large-scale LLM training. However, manual kernel design is both costly and time-consuming, motivating automatic approaches that leverage LLMs for code generation. Existing methods for automatic kernel generation, however, often produce low-efficiency kernels, incur high computational overhead, and fail to generalize across settings. In this work, we propose CudaForge, a training-free multi-agent workflow for CUDA kernel generation and optimization. Our workflow is inspired by the iterative workflow of human experts, which contains steps such as developing initial kernels, testing correctness, analyzing hardware feedback, and iterative improvement. More specifically, CudaForge employs two LLM agents: a Coder and a Judge, that iteratively generate, correct, and optimize CUDA kernels, while integrating hardware feedback such as Nsight Compute (NCU) metrics. In extensive evaluations, we show that CudaForge, by leveraging base models like OpenAI-o3, achieves 97.6\\% correctness of generated kernels and an average 1.68$\\times$ speedup over PyTorch baselines, substantially surpassing state-of-the-art models including OpenAI-o3 and Kevin on KernelBench.Beyond accuracy and speed, CudaForge demonstrates strong generalization across GPUs (A100, RTX 6000, 4090, 3090) and base models (OpenAI-o3, GPT-5, gpt-oss-120B, Claude-Sonnet-4, QwQ-32B), while maintaining high efficiency. In particular, generating an optimized kernel takes about 26.5 minutes on one RTX6000 and incurs about \\$ 0.3 API cost, which is significantly cheaper than existing agentic work that costs 6 H100 hours and \\$ 5 API cost per kernel. Our results highlight that multi-agent, training-free workflows can enable cost-effective, generalizable, and high-performance CUDA kernel optimization. Code available at https://github.com/OptimAI-Lab/CudaForge",
+        "id": "2611.14604",
+        "title": "KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation",
+        "abstract": "Training large language models to generate efficient CUDA kernels requires supervision spanning diverse computational requirements and iterative code optimization. Constructing this supervision is challenging because of heterogeneous specifications, and useful implementations emerge through iterative complicated testing and refinement. We introduce KernelMosaic, an open dataset pairing diverse CUDA tasks with verified solutions and trajectories. Human-guided review and diversity-aware selection curate tasks expressed as natural-language descriptions, reference programs, mathematical specifications, and their intersections. To build the solutions and trajectories, our agentic framework guides a strong LLM through implementation, correctness repair, and performance optimization with reusable CUDA guidance and execution feedback. Supervised fine-tuning of a small open-source model on KernelMosaic raises correctness from 4%, 0%, and 0% to 88%, 82%, and 16% on KernelBench L1, L2, and L3, respectively, while increasing the fraction of tasks with kernels faster than PyTorch eager at every level. Further training experiments show that supervision from the curated trajectories substantially outperforms direct responses and promotes sustained testing and revision. These results demonstrate that KernelMosaic enables a general-purpose model to achieve substantial gains in CUDA kernel generation.",
         "authors": [
-          "Zijian Zhang",
-          "Ron Yifeng Wang",
-          "Shi-Yang Li",
-          "Yue-Bo Luo",
-          "Ming-Yi Hong",
-          "Caiwen Ding"
+          "Ningyuan Xi",
+          "Yuhang Lai",
+          "Ning Miao"
         ],
-        "published": "2025-10-23",
-        "url": "https://www.semanticscholar.org/paper/6686dea6a06ccfbc97785f2b43ed374848cb3683",
-        "pdf_url": "https://arxiv.org/pdf/2511.01884",
+        "published": "2026-11-10",
+        "url": "https://arxiv.org/abs/2611.14604",
+        "pdf_url": "https://arxiv.org/pdf/2611.14604v1",
+        "venue": "arXiv cs.LG",
+        "arxiv_id": "2611.14604",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": null,
+        "source_lanes": [
+          "niche"
+        ],
+        "source_reason": "new on arXiv"
+      },
+      "lane": "niche",
+      "depth": "skim",
+      "score": 0.8591,
+      "why": "new on arXiv",
+      "payoff": "Training large language models to generate efficient CUDA kernels requires supervision spanning diverse computational requirements and iterative code optimization. Constructing this supervision is challenging because of heterogeneous specifications, and useful implementations eme…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2602.14293",
+        "title": "KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning",
+        "abstract": "Optimizing CUDA code across multiple generations of GPU architectures is challenging, as achieving peak performance requires an extensive exploration of an increasingly complex, hardware-specific optimization space. Traditional compilers are constrained by fixed heuristics, whereas finetuning Large Language Models (LLMs) can be expensive. However, agentic workflows for CUDA code optimization have limited ability to aggregate knowledge from prior exploration, leading to biased sampling and suboptimal solutions. We propose KernelBlaster, a Memory-Augmented In-context Reinforcement Learning (MAIC-RL) framework designed to improve CUDA optimization search capabilities of LLM-based GPU coding agents. KernelBlaster enables agents to learn from experience and make systematically informed decisions on future tasks by accumulating knowledge into a retrievable Persistent CUDA Knowledge Base. We propose a novel profile-guided, textual-gradient-based agentic flow for CUDA generation and optimization to achieve high performance across generations of GPU architectures. KernelBlaster guides LLM agents to systematically explore high-potential optimization strategies beyond naive rewrites. Compared to the PyTorch baseline, our method achieves geometric mean speedups of 1.43x, 2.50x, and 1.50x on KernelBench Levels 1, 2, and 3, respectively. We release KernelBlaster as an open-source agentic framework, accompanied by a test harness, verification components, and a reproducible evaluation pipeline.",
+        "authors": [
+          "Shengjun Kris Dong",
+          "Sahil Modi",
+          "Dima Nikiforov",
+          "S. Damani",
+          "Edward Lin",
+          "S. Hari",
+          "Christoforos E. Kozyrakis"
+        ],
+        "published": "2026-02-15",
+        "url": "https://www.semanticscholar.org/paper/d58e8a066c11340d52a6d3136388d992b0885eab",
+        "pdf_url": "https://arxiv.org/pdf/2602.14293",
         "venue": "arXiv.org",
-        "arxiv_id": "2511.01884",
-        "doi": "10.48550/arXiv.2511.01884",
-        "s2_id": "6686dea6a06ccfbc97785f2b43ed374848cb3683",
-        "citation_count": 67,
-        "influential_citation_count": 7,
+        "arxiv_id": "2602.14293",
+        "doi": "10.48550/arXiv.2602.14293",
+        "s2_id": "d58e8a066c11340d52a6d3136388d992b0885eab",
+        "citation_count": 17,
+        "influential_citation_count": 1,
         "hf_upvotes": null,
         "source_lanes": [
           "neighbourhood"
@@ -68,45 +94,13 @@
       },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.641,
+      "score": 0.636,
       "why": "cited by 2603.10085",
-      "payoff": "Developing efficient CUDA kernels is increasingly critical for AI applications such as large-scale LLM training. However, manual kernel design is both costly and time-consuming, motivating automatic approaches that leverage LLMs for code generation. Existing methods for automatic…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.14210",
-        "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
-        "abstract": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million tokens, and 50 forward-pass requests. Our method, Tree-Ising, casts this repair as a sparse discrete optimization problem over the model's own BF16 weights. Forward statistics define an objective that weakens a loop direction, strengthens a concluding direction, and preserves the layer's output on productive tokens. Within a state-tree representation, where lossless BF16 storage acts as a special case, the admissible edits are sign flips and exponent shifts that preserve all shared group exponents and mantissas. We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation. On the agent's two layers, Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol, while the base model scores 7.9% as reported. The simulated bifurcation solver yields a statistically indistinguishable repair at 55.1%. Both solvers outperform the agent edit across all five math benchmarks, with statistically significant improvements on MATH-500 and GSM8K after correcting for multiple comparisons. Our approach modifies 13% to 17% fewer weights and reduces BF16 bit flips by a factor of 2.2 to 2.3. It requires only four forward-pass requests and zero LLM tokens, with the annealing recipe costing about $0.90 in GPU time. On Qwen3.5-2B, with layers and dose selected using only the base model, the same recipe increases greedy GSM8K accuracy from 21.6% to 69.4%. As a proof of concept, we execute an eight-variable repair subproblem using QAOA on an IBM Heron processor.",
-        "authors": [
-          "Hadi Salloum",
-          "Ammar Ali"
-        ],
-        "published": "2026-11-10",
-        "url": "https://arxiv.org/abs/2611.14210",
-        "pdf_url": "https://arxiv.org/pdf/2611.14210v1",
-        "venue": "arXiv cs.LG",
-        "arxiv_id": "2611.14210",
-        "doi": null,
-        "s2_id": null,
-        "citation_count": null,
-        "influential_citation_count": null,
-        "hf_upvotes": 78,
-        "source_lanes": [
-          "niche",
-          "field"
-        ],
-        "source_reason": "new on arXiv; trending on HF Daily Papers"
-      },
-      "lane": "field",
-      "depth": "skim",
-      "score": 0.5093,
-      "why": "new on arXiv; trending on HF Daily Papers",
-      "payoff": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million toke…",
+      "payoff": "Optimizing CUDA code across multiple generations of GPU architectures is challenging, as achieving peak performance requires an extensive exploration of an increasingly complex, hardware-specific optimization space. Traditional compilers are constrained by fixed heuristics, where…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-12T07:05:11.553270Z",
+  "generated_at": "2026-11-13T02:57:08.299667Z",
   "gap_queries": [
     "model-based judgments can be incorrect, and checking individual findings cannot guarantee that the plan covers everythin",
     "unseen optimization opportunities may not match the current method taxonomy or decision rules"
