@@ -1,51 +1,29 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "picks": [
     {
       "paper": {
-        "id": "2611.01463",
-        "title": "DIMWIT: Directly Invoking Models Without Intensive Tuning",
-        "abstract": "Resource managers typically encode what to do in a task-specific policy---a heuristic, an optimization procedure, or a model trained for the task---that must be developed before use and may need revision as the workload or system changes. We propose bypassing policy development and instead asking pretrained models to make resource-management decisions directly, given the current system state, desired outcome, and available choices. We evaluate this approach on microservice autoscaling, DRAM sizing, and video encoding, using a frontier LLM and two small decision models. On two microservice applications, a small decision model meets latency targets while using within 10% of the replicas allocated by policy-based autoscalers and within 13% of the frontier LLM. In DRAM sizing, a small decision model reduces DRAM usage by up to 27.5% relative to static provisioning while maintaining at least 95% of baseline performance. In video encoding, it completes encodes up to 4.3$\\times$ faster than the frontier LLM, with an imperceptible 1.1-point decrease in Video Multi-Method Assessment Fusion (VMAF), a metric of perceptual video quality. Making individual resource-management decisions may be considerably simpler than developing a general strategy for making them.",
+        "id": "2611.17332",
+        "title": "ArchSpace: Recording, Reviewing, and Referencing LLM Architecture Research",
+        "abstract": "Model architecture shapes the scaling behavior, training efficiency, and inference cost of LLMs, making it a central focus of both industry and academia. In industry, teams such as those behind DeepSeek, Qwen, and Kimi routinely introduce architectural innovations, yet public reports rarely document which ideas succeeded, which were abandoned, and why. In academia, limited compute and inconsistent baselines often restrict evaluations to small-scale, single-point comparisons, making it difficult to establish whether improvements hold at larger scales or translate into broader impact. ArchSpace addresses both gaps as a public platform for Recording, Reviewing, and Referencing Architecture Researc}: each proposal is recorded with its experiments and reasoning, reviewed by the community, and referenced by later work. To evaluate ideas before costly large-scale training, ArchSpace leverages scaling laws to predict model loss at larger scales from smaller experiments, a practice widely adopted in industry. We provide initial references that make the platform usable: Qwen3.5 and OLMo3 baselines, fitted scaling laws, and a reusable training recipe. Ideas validated through this review can in turn become new baselines, and ArchSpace thereby aims to broaden the range of ideas that shape the next generation of models.",
         "authors": [
-          "Saarth Deshpande",
-          "Neeraja J. Yadwadkar",
-          "Venkat Arun"
+          "Jie Wang",
+          "Tong Zhu",
+          "JiaHao Kuang",
+          "Zhe Xu",
+          "Yunkai Chai",
+          "Dehong Zheng",
+          "Yu Cheng",
+          "Tao Ji",
+          "ZhouHan Lin",
+          "Qi Zhang",
+          "Bowen Zhou"
         ],
-        "published": "2026-11-01",
-        "url": "https://arxiv.org/abs/2611.01463",
-        "pdf_url": "https://arxiv.org/pdf/2611.01463v1",
-        "venue": "arXiv cs.PF",
-        "arxiv_id": "2611.01463",
-        "doi": null,
-        "s2_id": null,
-        "citation_count": null,
-        "influential_citation_count": null,
-        "hf_upvotes": null,
-        "source_lanes": [],
-        "source_reason": "you asked for it"
-      },
-      "lane": "want",
-      "depth": "deep",
-      "score": 1.0,
-      "why": "you asked for it",
-      "payoff": "Resource managers typically encode what to do in a task-specific policy---a heuristic, an optimization procedure, or a model trained for the task---that must be developed before use and may need revision as the workload or system changes. We propose bypassing policy development a…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.14604",
-        "title": "KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation",
-        "abstract": "Training large language models to generate efficient CUDA kernels requires supervision spanning diverse computational requirements and iterative code optimization. Constructing this supervision is challenging because of heterogeneous specifications, and useful implementations emerge through iterative complicated testing and refinement. We introduce KernelMosaic, an open dataset pairing diverse CUDA tasks with verified solutions and trajectories. Human-guided review and diversity-aware selection curate tasks expressed as natural-language descriptions, reference programs, mathematical specifications, and their intersections. To build the solutions and trajectories, our agentic framework guides a strong LLM through implementation, correctness repair, and performance optimization with reusable CUDA guidance and execution feedback. Supervised fine-tuning of a small open-source model on KernelMosaic raises correctness from 4%, 0%, and 0% to 88%, 82%, and 16% on KernelBench L1, L2, and L3, respectively, while increasing the fraction of tasks with kernels faster than PyTorch eager at every level. Further training experiments show that supervision from the curated trajectories substantially outperforms direct responses and promotes sustained testing and revision. These results demonstrate that KernelMosaic enables a general-purpose model to achieve substantial gains in CUDA kernel generation.",
-        "authors": [
-          "Ningyuan Xi",
-          "Yuhang Lai",
-          "Ning Miao"
-        ],
-        "published": "2026-11-10",
-        "url": "https://arxiv.org/abs/2611.14604",
-        "pdf_url": "https://arxiv.org/pdf/2611.14604v1",
-        "venue": "arXiv cs.LG",
-        "arxiv_id": "2611.14604",
+        "published": "2026-11-12",
+        "url": "https://arxiv.org/abs/2611.17332",
+        "pdf_url": "https://arxiv.org/pdf/2611.17332v1",
+        "venue": "arXiv cs.CL",
+        "arxiv_id": "2611.17332",
         "doi": null,
         "s2_id": null,
         "citation_count": null,
@@ -57,52 +35,89 @@
         "source_reason": "new on arXiv"
       },
       "lane": "niche",
-      "depth": "skim",
-      "score": 0.8591,
+      "depth": "deep",
+      "score": 0.7395,
       "why": "new on arXiv",
-      "payoff": "Training large language models to generate efficient CUDA kernels requires supervision spanning diverse computational requirements and iterative code optimization. Constructing this supervision is challenging because of heterogeneous specifications, and useful implementations eme…",
+      "payoff": "Model architecture shapes the scaling behavior, training efficiency, and inference cost of LLMs, making it a central focus of both industry and academia. In industry, teams such as those behind DeepSeek, Qwen, and Kimi routinely introduce architectural innovations, yet public rep…",
       "led_from": []
     },
     {
       "paper": {
-        "id": "2602.14293",
-        "title": "KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning",
-        "abstract": "Optimizing CUDA code across multiple generations of GPU architectures is challenging, as achieving peak performance requires an extensive exploration of an increasingly complex, hardware-specific optimization space. Traditional compilers are constrained by fixed heuristics, whereas finetuning Large Language Models (LLMs) can be expensive. However, agentic workflows for CUDA code optimization have limited ability to aggregate knowledge from prior exploration, leading to biased sampling and suboptimal solutions. We propose KernelBlaster, a Memory-Augmented In-context Reinforcement Learning (MAIC-RL) framework designed to improve CUDA optimization search capabilities of LLM-based GPU coding agents. KernelBlaster enables agents to learn from experience and make systematically informed decisions on future tasks by accumulating knowledge into a retrievable Persistent CUDA Knowledge Base. We propose a novel profile-guided, textual-gradient-based agentic flow for CUDA generation and optimization to achieve high performance across generations of GPU architectures. KernelBlaster guides LLM agents to systematically explore high-potential optimization strategies beyond naive rewrites. Compared to the PyTorch baseline, our method achieves geometric mean speedups of 1.43x, 2.50x, and 1.50x on KernelBench Levels 1, 2, and 3, respectively. We release KernelBlaster as an open-source agentic framework, accompanied by a test harness, verification components, and a reproducible evaluation pipeline.",
+        "id": "2603.28376",
+        "title": "Marco DeepResearch: Unlocking Efficient Deep Research Agents via Verification-Centric Design",
+        "abstract": "Deep research agents autonomously conduct open-ended investigations, integrating complex information retrieval with multi-step reasoning across diverse sources to solve real-world problems. To sustain this capability on long-horizon tasks, reliable verification is critical during both training and inference. A major bottleneck in existing paradigms stems from the lack of explicit verification mechanisms in QA data synthesis, trajectory construction, and test-time scaling. Errors introduced at each stage propagate downstream and degrade the overall agent performance. To address this, we present Marco DeepResearch, a deep research agent optimized with a verification-centric framework design at three levels: \\textbf{(1)~QA Data Synthesis:} We introduce verification mechanisms to graph-based and agent-based QA synthesis to control question difficulty while ensuring answers are unique and correct; \\textbf{(2)~Trajectory Construction:} We design a verification-driven trajectory synthesis method that injects explicit verification patterns into training trajectories; and \\textbf{(3)~Test-time scaling:} We use Marco DeepResearch itself as a verifier at inference time and effectively improve performance on challenging questions. Extensive experimental results demonstrate that our proposed Marco DeepResearch agent significantly outperforms 8B-scale deep research agents on most challenging benchmarks, such as BrowseComp and BrowseComp-ZH. Crucially, under a maximum budget of 600 tool calls, Marco DeepResearch even surpasses or approaches several 30B-scale agents, like Tongyi DeepResearch-30B.",
         "authors": [
-          "Shengjun Kris Dong",
-          "Sahil Modi",
-          "Dima Nikiforov",
-          "S. Damani",
-          "Edward Lin",
-          "S. Hari",
-          "Christoforos E. Kozyrakis"
+          "Bin Zhu",
+          "Qianghuai Jia",
+          "Tian Lan",
+          "Junyang Ren",
+          "Feng Gu",
+          "Feihu Jiang",
+          "Long-Yue Wang",
+          "Zhao Xu",
+          "Wei-Hua Luo"
         ],
-        "published": "2026-02-15",
-        "url": "https://www.semanticscholar.org/paper/d58e8a066c11340d52a6d3136388d992b0885eab",
-        "pdf_url": "https://arxiv.org/pdf/2602.14293",
+        "published": "2026-03-30",
+        "url": "https://www.semanticscholar.org/paper/4b7c1f9b7a50f504229958b877b80af58d1bc55f",
+        "pdf_url": "https://arxiv.org/pdf/2603.28376",
         "venue": "arXiv.org",
-        "arxiv_id": "2602.14293",
-        "doi": "10.48550/arXiv.2602.14293",
-        "s2_id": "d58e8a066c11340d52a6d3136388d992b0885eab",
+        "arxiv_id": "2603.28376",
+        "doi": "10.48550/arXiv.2603.28376",
+        "s2_id": "4b7c1f9b7a50f504229958b877b80af58d1bc55f",
         "citation_count": 17,
-        "influential_citation_count": 1,
+        "influential_citation_count": 0,
         "hf_upvotes": null,
         "source_lanes": [
           "neighbourhood"
         ],
-        "source_reason": "cited by 2603.10085"
+        "source_reason": "cited by 2610.15208"
       },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.636,
-      "why": "cited by 2603.10085",
-      "payoff": "Optimizing CUDA code across multiple generations of GPU architectures is challenging, as achieving peak performance requires an extensive exploration of an increasingly complex, hardware-specific optimization space. Traditional compilers are constrained by fixed heuristics, where…",
+      "score": 0.585,
+      "why": "cited by 2610.15208",
+      "payoff": "Deep research agents autonomously conduct open-ended investigations, integrating complex information retrieval with multi-step reasoning across diverse sources to solve real-world problems. To sustain this capability on long-horizon tasks, reliable verification is critical during…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2611.15777",
+        "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+        "abstract": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
+        "authors": [
+          "Lichen Li",
+          "Ziping Dong",
+          "Sicheng Feng",
+          "Qi Li",
+          "Xinchao Wang"
+        ],
+        "published": "2026-11-11",
+        "url": "https://arxiv.org/abs/2611.15777",
+        "pdf_url": "https://arxiv.org/pdf/2611.15777v1",
+        "venue": "arXiv cs.CL",
+        "arxiv_id": "2611.15777",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": 82,
+        "source_lanes": [
+          "niche",
+          "field"
+        ],
+        "source_reason": "new on arXiv; trending on HF Daily Papers"
+      },
+      "lane": "field",
+      "depth": "skim",
+      "score": 0.5227,
+      "why": "new on arXiv; trending on HF Daily Papers",
+      "payoff": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited i…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-13T02:57:08.299667Z",
+  "generated_at": "2026-11-14T06:11:46.844779Z",
   "gap_queries": [
-    "model-based judgments can be incorrect, and checking individual findings cannot guarantee that the plan covers everythin",
-    "unseen optimization opportunities may not match the current method taxonomy or decision rules"
+    "they say that if with say x amount of information a human can make a decision, then an llm can\nand if the information is",
+    "model-based judgments can be incorrect, and checking individual findings cannot guarantee that the plan covers everythin"
   ]
 }
