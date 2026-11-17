@@ -1,136 +1,124 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "picks": [
     {
       "paper": {
-        "id": "2607.12267",
-        "title": "Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents",
-        "abstract": "Language agents that interleave reasoning and tool use degrade sharply as reasoning chains lengthen, even when each individual step is easy. We trace this to context dilution: an agent's investigative state (what it has confirmed, what it suspects, and what it still needs) lives only implicitly in a growing context window, where early discoveries are buried under later retrievals. We introduce SLEUTH, which makes this state explicit and actionable through a structured epistemic working memory: the agent maintains Confirmed Facts grounded to sources, Active Hypotheses ranked by evidence, and Open Questions that directly drive its next action. Across five multi-hop benchmarks and five established baselines, SLEUTH's advantage grows with difficulty, from +5 points on HotpotQA to +11 on 4-hop chains, surpassing Reflexion without multiple episodes. Analyzing where the remaining gap lies, we identify the evidence sufficiency problem: agents often find the answer but fail to commit, exhausting their budget on needless verification. A lightweight commitment trigger fixes this, but only when the agent already maintains structured state: the identical trigger applied to an unstructured agent yields no improvement, isolating organized epistemic state as the necessary condition for effective commitment. Finally, enforcing protocol adherence on a weaker model recovers up to +19 points on the hardest problems, showing that how an agent organizes its reasoning, not raw model capability, is the active ingredient for scaling multi-hop reasoning.",
+        "id": "2611.17811",
+        "title": "AI Reviews Are Biased Towards the Appendix",
+        "abstract": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit. Prior work studies how LLM reviews align with human ones, yet we know little about which parts of a paper these models actually criticize. In this work, we investigate 2,000 papers from ACL, EMNLP, COLM, and ICLR, and show that the latest GPT and Claude models draw about 50% or more of their review weaknesses from the appendix. This behavior holds across the API, coding-agent, and web access methods for using LLMs to review a paper. In contrast, we find that humans draw only 8.4% of their weaknesses from the appendix, and these weaknesses primarily revolve around a paper's presentation and content related to its core idea. Meanwhile, LLMs draw weaknesses from deep in the appendix that concern fine-grained technical details not central to the paper's contributions. We anticipate that our analysis will contribute to the scholarly discourse on AI reviews. Our code is publicly available at: https://github.com/cincynlp/review_appendix.",
         "authors": [
-          "Ning Liu"
+          "Saptarshi Ghosh",
+          "Mohammad Saim",
+          "Tianyu Jiang"
         ],
-        "published": "2026-07-14",
-        "url": "https://www.semanticscholar.org/paper/3737880aa312b76556e1c61d38cbc1386658035e",
-        "pdf_url": "https://arxiv.org/pdf/2607.12267",
-        "venue": "arXiv.org",
-        "arxiv_id": "2607.12267",
-        "doi": "10.48550/arXiv.2607.12267",
-        "s2_id": "3737880aa312b76556e1c61d38cbc1386658035e",
-        "citation_count": 3,
-        "influential_citation_count": 0,
-        "hf_upvotes": null,
-        "source_lanes": [
-          "neighbourhood"
-        ],
-        "source_reason": "cited by 2610.15208"
-      },
-      "lane": "niche",
-      "depth": "deep",
-      "score": 0.7342,
-      "why": "cited by 2610.15208",
-      "payoff": "Language agents that interleave reasoning and tool use degrade sharply as reasoning chains lengthen, even when each individual step is easy. We trace this to context dilution: an agent's investigative state (what it has confirmed, what it suspects, and what it still needs) lives …",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2602.02486",
-        "title": "RE-TRAC: REcursive TRAjectory Compression for Deep Search Agents",
-        "abstract": "LLM-based deep research agents are largely built on the ReAct framework. This linear design makes it difficult to revisit earlier states, branch into alternative search directions, or maintain global awareness under long contexts, often leading to local optima, redundant exploration, and inefficient search. We propose Re-TRAC, an agentic framework that performs cross-trajectory exploration by generating a structured state representation after each trajectory to summarize evidence, uncertainties, failures, and future plans, and conditioning subsequent trajectories on this state representation. This enables iterative reflection and globally informed planning, reframing research as a progressive process. Empirical results show that Re-TRAC consistently outperforms ReAct by 15-20% on BrowseComp with frontier LLMs. For smaller models, we introduce Re-TRAC-aware supervised fine-tuning, achieving state-of-the-art performance at comparable scales. Notably, Re-TRAC shows a monotonic reduction in tool calls and token usage across rounds, indicating progressively targeted exploration driven by cross-trajectory reflection rather than redundant search.",
-        "authors": [
-          "Jialiang Zhu",
-          "Gong-Rui Zhang",
-          "Xiaolong Ma",
-          "Lin Xu",
-          "Miaosen Zhang",
-          "Ruiqi Yang",
-          "Song Wang",
-          "Kai Qiu",
-          "Zhi-Rong Wu",
-          "Qi Dai",
-          "Rui Ma",
-          "Bei Liu",
-          "Yi-Fan Yang",
-          "Chong Luo",
-          "Zheng-Yuan Yang",
-          "Linjie Li",
-          "Lijuan Wang",
-          "Weizhu Chen",
-          "Xin Geng",
-          "Baining Guo"
-        ],
-        "published": "2026-02-02",
-        "url": "https://www.semanticscholar.org/paper/f63a417f0f7b7e79f3756b9458ad2859dd7e2c8e",
-        "pdf_url": "https://arxiv.org/pdf/2602.02486",
-        "venue": "arXiv.org",
-        "arxiv_id": "2602.02486",
-        "doi": "10.48550/arXiv.2602.02486",
-        "s2_id": "f63a417f0f7b7e79f3756b9458ad2859dd7e2c8e",
-        "citation_count": 15,
-        "influential_citation_count": 0,
-        "hf_upvotes": null,
-        "source_lanes": [
-          "neighbourhood"
-        ],
-        "source_reason": "cited by 2610.15208"
-      },
-      "lane": "neighbourhood",
-      "depth": "skim",
-      "score": 0.5519,
-      "why": "cited by 2610.15208",
-      "payoff": "LLM-based deep research agents are largely built on the ReAct framework. This linear design makes it difficult to revisit earlier states, branch into alternative search directions, or maintain global awareness under long contexts, often leading to local optima, redundant explorat…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.15131",
-        "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
-        "abstract": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time. The RWM treats intelligence and physical reality as equally fundamental to what constitutes a world. Existing world models largely focus on simulating the latter, leaving reasoning and decision-making as external controls rather than intrinsic parts of the world itself. In RWM, we identify two equally fundamental capabilities: Intent, which provides the cognition underlying world interactions, and Realization, which generates coherent audio-visual behavior. To realize this formulation, Duo v1 introduces three key technical designs: (1) Leveraging autoregressive modeling for continuous interaction reasoning and participation decisions, rather than restricting it to instruction understanding for diffusion models. (2) Constructing chunk-specific conditions and synchronize tokens across Intent and Realization on a unified timeline. Module-specific attention masks enforce causal dependencies both within and across chunks, preventing access to future inputs. (3) Mitigating distribution shift in both modules through dual rollout distillation, training on autoregressively generated Intent tokens and synthesized audiovisual histories from Realization. Both modules continuously perceive real-time audio, video, and text, enabling full-duplex interaction with spontaneous conversations and interruptions. Beyond conversation, users can share real objects, reshape virtual scenes, guide assistants, or play audiovisual games without mouse or keyboard controls. The release of Duo v1 makes our first step, with the next version coming soon. We look forward to broader exploration of this emerging field.",
-        "authors": [
-          "Hengyuan Cao",
-          "Biao Gong",
-          "Guoshan Lu",
-          "Qiyuan Zhang",
-          "Lin Liu",
-          "Yiding Tian",
-          "Yilei Jiang",
-          "Yuxin Ma",
-          "Chengzhang Wu",
-          "Kun Chen",
-          "Yiqian Xie",
-          "Ting Liu",
-          "Xin Zheng",
-          "Xijun Gu",
-          "Tianren Ma",
-          "Jiancheng Pan",
-          "Chi Zhang",
-          "Xuzhe Zheng",
-          "Siyi Li",
-          "Zhenzhong Lan"
-        ],
-        "published": "2026-11-11",
-        "url": "https://arxiv.org/abs/2611.15131",
-        "pdf_url": "https://arxiv.org/pdf/2611.15131",
-        "venue": "arXiv",
-        "arxiv_id": "2611.15131",
+        "published": "2026-11-13",
+        "url": "https://arxiv.org/abs/2611.17811",
+        "pdf_url": "https://arxiv.org/pdf/2611.17811v1",
+        "venue": "arXiv cs.CL",
+        "arxiv_id": "2611.17811",
         "doi": null,
         "s2_id": null,
         "citation_count": null,
         "influential_citation_count": null,
-        "hf_upvotes": 43,
+        "hf_upvotes": 10,
         "source_lanes": [
-          "field"
+          "field",
+          "niche"
         ],
-        "source_reason": "trending on HF Daily Papers"
+        "source_reason": "new on arXiv; trending on HF Daily Papers"
+      },
+      "lane": "niche",
+      "depth": "deep",
+      "score": 0.7812,
+      "why": "new on arXiv; trending on HF Daily Papers",
+      "payoff": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit. Prior work studies how LLM reviews align with human ones, yet we know little about which parts of a …",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2610.23904",
+        "title": "LVMH: A Meta-Optimization Harness for Long-Video Agent Memory",
+        "abstract": "Long-video agents must map hours or days of multimodal evidence into a bounded context while respecting token and latency budgets, making memory design a context-management challenge. Existing memory systems largely rely on hand-designed policies, leaving open how to jointly optimize memory design for performance and efficiency. We propose Long Video Meta-memory Harness (LVMH), an automated multi-agent framework that formulates memory-policy development as multi-objective code search around a fixed answer model. To guard against self-certification and development-set overfitting, LVMH separates implementation from independent review and enforces protected observation boundaries. Persistent meta-memory records past proposals, traces, costs, and failures to guide subsequent policy revisions. Through this harness, we discover Self-Evolving Evidence Memory (SEEM), a\"text-first, vision-second\"policy that answers from compact structured event memory and evidence specialists, consulting localized frames through a selective visual gate. The policy evolved on EgoLifeQA generalizes to unseen benchmarks, outperforming Meta-Harness on both Ego-R1 Bench and Video-MME (L) with GPT-5 mini. Across the three benchmarks, SEEM with GPT-5 achieves 65.7% average accuracy, surpassing the previous state of the art by 7.7 percentage points with approximately 32x lower average evaluation token use and 91x shorter average response time.",
+        "authors": [
+          "Li-Wei Che",
+          "Ben-Lin Liu",
+          "Dai Li",
+          "Xiang-Yan Li",
+          "Zi-Jian Wu",
+          "Chang-Jiang Li",
+          "Ming-Hao Guo",
+          "Cheng-Zhi Mao",
+          "V. Pavlović",
+          "Ranjay Krishna"
+        ],
+        "published": "2026-09-29",
+        "url": "https://www.semanticscholar.org/paper/9f2344b658d38f880da6461f7d176de18b605eda",
+        "pdf_url": "https://arxiv.org/pdf/2610.23904",
+        "venue": "arXiv",
+        "arxiv_id": "2610.23904",
+        "doi": null,
+        "s2_id": "9f2344b658d38f880da6461f7d176de18b605eda",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "hf_upvotes": null,
+        "source_lanes": [
+          "neighbourhood"
+        ],
+        "source_reason": "S2 recommendation from your reads"
+      },
+      "lane": "neighbourhood",
+      "depth": "skim",
+      "score": 0.5857,
+      "why": "S2 recommendation from your reads",
+      "payoff": "Long-video agents must map hours or days of multimodal evidence into a bounded context while respecting token and latency budgets, making memory design a context-management challenge. Existing memory systems largely rely on hand-designed policies, leaving open how to jointly opti…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2611.18359",
+        "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+        "abstract": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+        "authors": [
+          "Grid Robotics",
+          ":",
+          "Qingfeng Lan",
+          "Duo Li",
+          "Siyao Li",
+          "Yiheng Lyu",
+          "Shijian Lu",
+          "Zhenghao Qi",
+          "Shizun Wang",
+          "Xinchao Wang",
+          "Ming Yang",
+          "Zhiqin Yang",
+          "Zuhao Yang",
+          "Tao Yu"
+        ],
+        "published": "2026-11-13",
+        "url": "https://arxiv.org/abs/2611.18359",
+        "pdf_url": "https://arxiv.org/pdf/2611.18359v1",
+        "venue": "arXiv cs.RO",
+        "arxiv_id": "2611.18359",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": 112,
+        "source_lanes": [
+          "field",
+          "niche"
+        ],
+        "source_reason": "new on arXiv; trending on HF Daily Papers"
       },
       "lane": "field",
       "depth": "skim",
-      "score": 0.3483,
-      "why": "trending on HF Daily Papers",
-      "payoff": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time. The RWM treats intelligence and physical reality as equally fundamental to what const…",
+      "score": 0.7076,
+      "why": "new on arXiv; trending on HF Daily Papers",
+      "payoff": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of t…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-16T02:01:26.686848Z",
+  "generated_at": "2026-11-17T02:57:42.930411Z",
   "gap_queries": [
     "they say that if with say x amount of information a human can make a decision, then an llm can\nand if the information is",
     "model-based judgments can be incorrect, and checking individual findings cannot guarantee that the plan covers everythin"
