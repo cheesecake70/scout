@@ -1,25 +1,50 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "picks": [
     {
       "paper": {
-        "id": "2611.26423",
-        "title": "Seer: Guiding Small Deep-Research Agents with Shared Decision Models",
-        "abstract": "Deep-research agents repeatedly decide what to search, read, and verify, often using large cloud-hosted language models for action proposal. However, privacy and local control motivate running agents on users' devices, where limited memory and compute favor smaller models and complicate on-device training. Yet inference-time guidance faces three obstacles: exploring alternatives through real execution adds tool calls, prompted self-evaluation is bounded by the agent's judgment, and model-specific guidance risks repeated adaptation costs. We introduce Seer, an inference-time framework providing local guidance that separates the agent's action proposal from learned consequence prediction and value estimation. From a shared corpus of real research trajectories, we train two models: a tool-response simulator on observed call--response pairs and a value estimator on histories labeled with discounted terminal correctness. The simulator and estimator are trained offline and reused across agents without further training. Moreover, Seer executes only the selected action and adds only real tool responses to the committed history, avoiding tool calls on discarded candidates at additional inference cost. Across multiple deep-research benchmarks, Seer substantially improves agent performance for different language models. For instance, GAIA accuracy rises from 13.6% to 41.7% for Qwen3.5-4B and from 22.3% to 50.5% for Qwen3.5-9B. Furthermore, our analyses suggest that broader candidate coverage can compensate for imperfect simulation, while prediction and scoring errors limit the benefits of wider imagined search. These findings highlight the potential of reusable models for prediction and evaluation to strengthen small research agents through extra local computation without the real execution of the discarded candidates.",
+        "id": "2302.10174",
+        "title": "Towards Universal Fake Image Detectors that Generalize Across Generative Models",
+        "abstract": "With generative models proliferating at a rapid rate, there is a growing need for general purpose fake image detectors. In this work, we first show that the existing paradigm, which consists of training a deep network for real-vs-fake classification, fails to detect fake images from newer breeds of generative models when trained to detect GAN fake images. Upon analysis, we find that the resulting classifier is asymmetrically tuned to detect patterns that make an image fake. The real class becomes a ‘sink’ class holding anything that is not fake, including generated images from models not accessible during training. Building upon this discovery, we propose to perform real-vs-fake classification without learning; i.e., using a feature space not explicitly trained to distinguish real from fake images. We use nearest neighbor and linear probing as instantiations of this idea. When given access to the feature space of a large pretrained vision-language model, the very simple baseline of nearest neighbor classification has surprisingly good generalization ability in detecting fake images from a wide variety of generative models; e.g., it improves upon the SoTA [50] by +15.07 mAP and +25.90% acc when tested on unseen diffusion and autoregressive models. Our code, models, and data can be found at https://github.com/Yuheng-Li/UniversalFakeDetect",
         "authors": [
-          "Yuhao Zhou",
-          "Yang Zhou",
-          "Yuanxi Li",
-          "Jindi Lv",
-          "Dan Si",
-          "Qing Ye",
-          "Jiancheng Lv"
+          "Utkarsh Ojha",
+          "Yu-Heng Li",
+          "Yong Jae Lee"
         ],
-        "published": "2026-11-19",
-        "url": "https://arxiv.org/abs/2611.26423",
-        "pdf_url": "https://arxiv.org/pdf/2611.26423v1",
-        "venue": "arXiv cs.AI",
-        "arxiv_id": "2611.26423",
+        "published": "2023-02-20",
+        "url": "https://www.semanticscholar.org/paper/0fafac05423aa187d85cc12bce1865aefc787700",
+        "pdf_url": "https://arxiv.org/pdf/2302.10174",
+        "venue": "Computer Vision and Pattern Recognition",
+        "arxiv_id": "2302.10174",
+        "doi": "10.1109/CVPR52729.2023.02345",
+        "s2_id": "0fafac05423aa187d85cc12bce1865aefc787700",
+        "citation_count": 898,
+        "influential_citation_count": 257,
+        "hf_upvotes": null,
+        "source_lanes": [],
+        "source_reason": "essential on 'vision-language and generative image/video models'"
+      },
+      "lane": "essential",
+      "depth": "deep",
+      "score": 1.0,
+      "why": "essential on 'vision-language and generative image/video models'",
+      "payoff": "With generative models proliferating at a rapid rate, there is a growing need for general purpose fake image detectors. In this work, we first show that the existing paradigm, which consists of training a deep network for real-vs-fake classification, fails to detect fake images f…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2611.27443",
+        "title": "Learning When to Ask: Advisor-Aware Post-Training for SLM Agents",
+        "abstract": "Small language models (SLMs) are increasingly attractive for cheap, high-throughput agentic deployment, but they remain weak at multi-step reasoning and tool use that long-horizon tasks demand. We study how to post-train an SLM to seek advice from a stronger model and act on that advice itself, following an advisor-executor pattern. Out of the box, this pattern fails across open- and closed-source small-model families: wiring an SLM to an advisor is a harness-design matter that is not enough on its own. A post-training recipe is needed to teach the model when to ask, in a cost-aware fashion, and how to follow advice across steps. Our method, ADAPT (ADvisor-Aware Post-Training), is a multi-stage recipe that instills this behavior, learning entirely from the policy's own rollouts supervised by the environment's outcome, with no learned reward model or human annotation. Across three domains, compared to an untrained harness baseline, ADAPT improves success rate in embodied text reasoning (TextWorld) from 24.5% to 77.3%, code generation (LiveCodeBench) from 21.8% to 56.0%, and deep web search (GAIA) from 17.5% to 49.3%, while querying the advisor sparingly (~1.0-2.1 calls per task). On the two long-horizon domains it closes 70-85% of the gap to an oracle that perfectly times when to ask for advice, and on code generation it exceeds that oracle. The gains persist when the advisor is replaced by one unseen in training, showing that the learned help-seeking policy is robust to a changing advisor rather than tied to the one it was trained with.",
+        "authors": [
+          "Aasheesh Singh",
+          "Vishal Vaddina"
+        ],
+        "published": "2026-11-20",
+        "url": "https://arxiv.org/abs/2611.27443",
+        "pdf_url": "https://arxiv.org/pdf/2611.27443v1",
+        "venue": "arXiv cs.LG",
+        "arxiv_id": "2611.27443",
         "doi": null,
         "s2_id": null,
         "citation_count": null,
@@ -31,81 +56,49 @@
         "source_reason": "new on arXiv"
       },
       "lane": "niche",
-      "depth": "deep",
-      "score": 0.6039,
+      "depth": "skim",
+      "score": 0.5776,
       "why": "new on arXiv",
-      "payoff": "Deep-research agents repeatedly decide what to search, read, and verify, often using large cloud-hosted language models for action proposal. However, privacy and local control motivate running agents on users' devices, where limited memory and compute favor smaller models and com…",
+      "payoff": "Small language models (SLMs) are increasingly attractive for cheap, high-throughput agentic deployment, but they remain weak at multi-step reasoning and tool use that long-horizon tasks demand. We study how to post-train an SLM to seek advice from a stronger model and act on that…",
       "led_from": []
     },
     {
       "paper": {
-        "id": "doi:10.1145/3786335.3813122",
-        "title": "Dossier: Deep Research via Ledger-Driven Branching Search and Query Encoding Learning",
-        "abstract": "Deep research requires synthesizing information across fragmented sources. Existing ReAct-like agents for such multi-hop retrieval typically rely on long linear search trajectories, where early retrieval failures compound over time. We introduce Dossier, a deep research agent that replaces linear paths with locally parallel, branching search managed by a persistent Research Ledger. The Ledger explicitly tracks claims, contradictions, and information gaps, continuously updating as new evidence is synthesized. To improve the quality of each retrieval step, we introduce Evidence-Aligned Query Learning (EAQL), a training mechanism that fine-tunes query encoders to condition on the Research Ledger. This ensures that generated queries are contextually grounded in the agent’s evolving state rather than isolated prompts. Our evaluation demonstrates that Dossier’s branching architecture improves end-to-end accuracy on BrowseComp-Plus by 23 percentage points and HoVer by 29 percentage points across multiple LLM models.",
+        "id": "2611.04104",
+        "title": "ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends",
+        "abstract": "Optimizing accelerator code across hardware architectures is difficult. ML compilers search predefined spaces of schedules and micro-kernels, while LLM-guided optimization can explore alternative algorithms, operator decompositions, and hardware-specific techniques. However, existing LLM agents typically target a single programming interface, toolchain, or accelerator family, focus on kernel-level optimization without model-level transforms, and offer limited reuse of experience across hardware targets. We present ModelBlaster, a Memory-Augmented In-Context Reinforcement Learning (MAIC-RL) framework for optimizing data-parallel kernels and whole models across heterogeneous SIMD and SIMT accelerators. Its mutable policy is a persistent knowledge base updated at inference time by Actor-Critic Textual Gradient Descent (AC-TGD). The knowledge base maps performance states to actions, outcomes, and constraints, enabling experience reuse across kernels, models, and hardware targets. A model-level optimizer uses kernel-level knowledge to inform whole-model decisions. The same optimization loop and knowledge schema support CUDA on NVIDIA GPUs, OpenCL on Qualcomm GPUs, and RVV intrinsics on RISC-V vector cores, with only lowering and measurement layers specific to each target. Compared with PyTorch, ModelBlaster achieves geometric-mean speedups of 1.85x, 5.58x, and 5.18x on KernelBench Levels 1, 2, and 3, and 1.69x on SOL-ExecBench Levels 1 and 2 on a B200 GPU. On Qualcomm Adreno GPUs, it achieves 5.8x over the vendor SDK and 1.7x over Apache TVM; on RISC-V vector cores, it achieves 2.7x over ExecuTorch with XNNPACK across 70 KernelBench problems.",
         "authors": [
-          "Om Chabra",
-          "Noah Ziems",
-          "Meng Jiang",
-          "Omar Khattab",
-          "Hari Balakrishnan"
+          "Shengjun Kris Dong",
+          "Dima Nikiforov",
+          "Sahil Modi",
+          "Sana Damani",
+          "Edward Lin",
+          "S. Hari",
+          "Christos Kozyrakis"
         ],
-        "published": "2026-05-26",
-        "url": "https://www.semanticscholar.org/paper/bec9b4ee0cf2b4f9ce0d8593182a8956352d6905",
-        "pdf_url": "https://doi.org/10.1145/3786335.3813122",
-        "venue": "CAIS",
-        "arxiv_id": null,
-        "doi": "10.1145/3786335.3813122",
-        "s2_id": "bec9b4ee0cf2b4f9ce0d8593182a8956352d6905",
-        "citation_count": 1,
+        "published": "2026-11-03",
+        "url": "https://www.semanticscholar.org/paper/9a4d7365ab57af54f35f6f7d3fc3e6f049b30d4e",
+        "pdf_url": "https://arxiv.org/pdf/2611.04104",
+        "venue": "arXiv",
+        "arxiv_id": "2611.04104",
+        "doi": null,
+        "s2_id": "9a4d7365ab57af54f35f6f7d3fc3e6f049b30d4e",
+        "citation_count": 0,
         "influential_citation_count": 0,
         "hf_upvotes": null,
         "source_lanes": [
           "neighbourhood"
         ],
-        "source_reason": "cited by 2610.15208"
+        "source_reason": "S2 recommendation from your reads"
       },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.5297,
-      "why": "cited by 2610.15208",
-      "payoff": "Deep research requires synthesizing information across fragmented sources. Existing ReAct-like agents for such multi-hop retrieval typically rely on long linear search trajectories, where early retrieval failures compound over time. We introduce Dossier, a deep research agent tha…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2505.15966",
-        "title": "Pixel Reasoner: Incentivizing Pixel-Space Reasoning with Curiosity-Driven Reinforcement Learning",
-        "abstract": "Chain-of-thought reasoning has significantly improved the performance of Large Language Models (LLMs) across various domains. However, this reasoning process has been confined exclusively to textual space, limiting its effectiveness in visually intensive tasks. To address this limitation, we introduce the concept of reasoning in the pixel-space. Within this novel framework, Vision-Language Models (VLMs) are equipped with a suite of visual reasoning operations, such as zoom-in and select-frame. These operations enable VLMs to directly inspect, interrogate, and infer from visual evidences, thereby enhancing reasoning fidelity for visual tasks. Cultivating such pixel-space reasoning capabilities in VLMs presents notable challenges, including the model's initially imbalanced competence and its reluctance to adopt the newly introduced pixel-space operations. We address these challenges through a two-phase training approach. The first phase employs instruction tuning on synthesized reasoning traces to familiarize the model with the novel visual operations. Following this, a reinforcement learning (RL) phase leverages a curiosity-driven reward scheme to balance exploration between pixel-space reasoning and textual reasoning. With these visual operations, VLMs can interact with complex visual inputs, such as information-rich images or videos to proactively gather necessary information. We demonstrate that this approach significantly improves VLM performance across diverse visual reasoning benchmarks. Our 7B model, \\model, achieves 84\\% on V* bench, 74\\% on TallyQA-Complex, and 84\\% on InfographicsVQA, marking the highest accuracy achieved by any open-source model to date. These results highlight the importance of pixel-space reasoning and the effectiveness of our framework.",
-        "authors": [
-          "Alex Su",
-          "Hao-Zhe Wang",
-          "Weiming Ren",
-          "Fang-Zhen Lin",
-          "Wen-Hu Chen"
-        ],
-        "published": "2025-05-21",
-        "url": "https://www.semanticscholar.org/paper/da608eaf47596938dd80f6bd977610ca07b467e9",
-        "pdf_url": "https://arxiv.org/pdf/2505.15966",
-        "venue": "Neural Information Processing Systems",
-        "arxiv_id": "2505.15966",
-        "doi": "10.48550/arXiv.2505.15966",
-        "s2_id": "da608eaf47596938dd80f6bd977610ca07b467e9",
-        "citation_count": 326,
-        "influential_citation_count": 58,
-        "hf_upvotes": null,
-        "source_lanes": [
-          "field"
-        ],
-        "source_reason": "accepted at NeurIPS 2025"
-      },
-      "lane": "field",
-      "depth": "skim",
-      "score": 0.314,
-      "why": "accepted at NeurIPS 2025",
-      "payoff": "Chain-of-thought reasoning has significantly improved the performance of Large Language Models (LLMs) across various domains. However, this reasoning process has been confined exclusively to textual space, limiting its effectiveness in visually intensive tasks. To address this li…",
+      "score": 0.5479,
+      "why": "S2 recommendation from your reads",
+      "payoff": "Optimizing accelerator code across hardware architectures is difficult. ML compilers search predefined spaces of schedules and micro-kernels, while LLM-guided optimization can explore alternative algorithms, operator decompositions, and hardware-specific techniques. However, exis…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-22T08:46:51.463440Z",
+  "generated_at": "2026-11-23T03:07:11.795235Z",
   "gap_queries": []
 }
