@@ -1,88 +1,26 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "picks": [
     {
       "paper": {
-        "id": "2302.10174",
-        "title": "Towards Universal Fake Image Detectors that Generalize Across Generative Models",
-        "abstract": "With generative models proliferating at a rapid rate, there is a growing need for general purpose fake image detectors. In this work, we first show that the existing paradigm, which consists of training a deep network for real-vs-fake classification, fails to detect fake images from newer breeds of generative models when trained to detect GAN fake images. Upon analysis, we find that the resulting classifier is asymmetrically tuned to detect patterns that make an image fake. The real class becomes a ‘sink’ class holding anything that is not fake, including generated images from models not accessible during training. Building upon this discovery, we propose to perform real-vs-fake classification without learning; i.e., using a feature space not explicitly trained to distinguish real from fake images. We use nearest neighbor and linear probing as instantiations of this idea. When given access to the feature space of a large pretrained vision-language model, the very simple baseline of nearest neighbor classification has surprisingly good generalization ability in detecting fake images from a wide variety of generative models; e.g., it improves upon the SoTA [50] by +15.07 mAP and +25.90% acc when tested on unseen diffusion and autoregressive models. Our code, models, and data can be found at https://github.com/Yuheng-Li/UniversalFakeDetect",
+        "id": "2611.03097",
+        "title": "DR Pixel: Page-Native Deep Research with Vision-Language Models",
+        "abstract": "Complex documents such as scientific papers contain rich information in tables, figures, and equations; however, existing deep research (DR) agents typically reduce papers to OCR-extracted text. We instead ask whether vision-language models (VLMs) can enable page-native deep research: directly retrieving and reasoning over rendered document page images. We introduce DR Pixel, the first open-source end-to-end multimodal DR agent that uses rendered page images as its sole retrieval and reasoning unit, operating over a corpus of 1.06M pages. To evaluate this setting, we construct DRPixelBench, a benchmark on scientific papers requiring reasoning over text, figures, tables, and equations. Surprisingly, page-native DR already works well without training, outperforming OCR-based baselines across state-of-the-art models like GPT-5.4, Gemini-3.5-Flash, and Qwen3.6-27B, while requiring fewer tool calls. We next turn to DR training. A key challenge is that teacher trajectories for agentic supervised finetuning are noisy, mixing critical reasoning and action steps with redundant or failed attempts. To address this, we introduce counterfactual credit reweighting, a fine-grained credit assignment method that weights individual reasoning and action steps by their counterfactual contribution to the final answer. Our training improves retrieval recall by about 15 points and final accuracy by over 10 points on DRPixelBench, and likewise outperforms the untrained baseline on four existing benchmarks. On out-of-distribution ViDoRe-V3, DR Pixel comes within 1.8 points of an oracle that is given the gold pages directly. Our results suggest that the conventional OCR-then-retrieve pipeline is not only unnecessary but suboptimal: directly retrieving and reasoning over visual document pages makes complex DR both more effective and more efficient.",
         "authors": [
-          "Utkarsh Ojha",
-          "Yu-Heng Li",
-          "Yong Jae Lee"
+          "Tiansheng Hu",
+          "Yi-Chuan Wang",
+          "James V. Talwar",
+          "Nicholas Tomlin",
+          "Chen Zhao",
+          "Sewon Min"
         ],
-        "published": "2023-02-20",
-        "url": "https://www.semanticscholar.org/paper/0fafac05423aa187d85cc12bce1865aefc787700",
-        "pdf_url": "https://arxiv.org/pdf/2302.10174",
-        "venue": "Computer Vision and Pattern Recognition",
-        "arxiv_id": "2302.10174",
-        "doi": "10.1109/CVPR52729.2023.02345",
-        "s2_id": "0fafac05423aa187d85cc12bce1865aefc787700",
-        "citation_count": 898,
-        "influential_citation_count": 257,
-        "hf_upvotes": null,
-        "source_lanes": [],
-        "source_reason": "essential on 'vision-language and generative image/video models'"
-      },
-      "lane": "essential",
-      "depth": "deep",
-      "score": 1.0,
-      "why": "essential on 'vision-language and generative image/video models'",
-      "payoff": "With generative models proliferating at a rapid rate, there is a growing need for general purpose fake image detectors. In this work, we first show that the existing paradigm, which consists of training a deep network for real-vs-fake classification, fails to detect fake images f…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.27443",
-        "title": "Learning When to Ask: Advisor-Aware Post-Training for SLM Agents",
-        "abstract": "Small language models (SLMs) are increasingly attractive for cheap, high-throughput agentic deployment, but they remain weak at multi-step reasoning and tool use that long-horizon tasks demand. We study how to post-train an SLM to seek advice from a stronger model and act on that advice itself, following an advisor-executor pattern. Out of the box, this pattern fails across open- and closed-source small-model families: wiring an SLM to an advisor is a harness-design matter that is not enough on its own. A post-training recipe is needed to teach the model when to ask, in a cost-aware fashion, and how to follow advice across steps. Our method, ADAPT (ADvisor-Aware Post-Training), is a multi-stage recipe that instills this behavior, learning entirely from the policy's own rollouts supervised by the environment's outcome, with no learned reward model or human annotation. Across three domains, compared to an untrained harness baseline, ADAPT improves success rate in embodied text reasoning (TextWorld) from 24.5% to 77.3%, code generation (LiveCodeBench) from 21.8% to 56.0%, and deep web search (GAIA) from 17.5% to 49.3%, while querying the advisor sparingly (~1.0-2.1 calls per task). On the two long-horizon domains it closes 70-85% of the gap to an oracle that perfectly times when to ask for advice, and on code generation it exceeds that oracle. The gains persist when the advisor is replaced by one unseen in training, showing that the learned help-seeking policy is robust to a changing advisor rather than tied to the one it was trained with.",
-        "authors": [
-          "Aasheesh Singh",
-          "Vishal Vaddina"
-        ],
-        "published": "2026-11-20",
-        "url": "https://arxiv.org/abs/2611.27443",
-        "pdf_url": "https://arxiv.org/pdf/2611.27443v1",
-        "venue": "arXiv cs.LG",
-        "arxiv_id": "2611.27443",
-        "doi": null,
-        "s2_id": null,
-        "citation_count": null,
-        "influential_citation_count": null,
-        "hf_upvotes": null,
-        "source_lanes": [
-          "niche"
-        ],
-        "source_reason": "new on arXiv"
-      },
-      "lane": "niche",
-      "depth": "skim",
-      "score": 0.5776,
-      "why": "new on arXiv",
-      "payoff": "Small language models (SLMs) are increasingly attractive for cheap, high-throughput agentic deployment, but they remain weak at multi-step reasoning and tool use that long-horizon tasks demand. We study how to post-train an SLM to seek advice from a stronger model and act on that…",
-      "led_from": []
-    },
-    {
-      "paper": {
-        "id": "2611.04104",
-        "title": "ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends",
-        "abstract": "Optimizing accelerator code across hardware architectures is difficult. ML compilers search predefined spaces of schedules and micro-kernels, while LLM-guided optimization can explore alternative algorithms, operator decompositions, and hardware-specific techniques. However, existing LLM agents typically target a single programming interface, toolchain, or accelerator family, focus on kernel-level optimization without model-level transforms, and offer limited reuse of experience across hardware targets. We present ModelBlaster, a Memory-Augmented In-Context Reinforcement Learning (MAIC-RL) framework for optimizing data-parallel kernels and whole models across heterogeneous SIMD and SIMT accelerators. Its mutable policy is a persistent knowledge base updated at inference time by Actor-Critic Textual Gradient Descent (AC-TGD). The knowledge base maps performance states to actions, outcomes, and constraints, enabling experience reuse across kernels, models, and hardware targets. A model-level optimizer uses kernel-level knowledge to inform whole-model decisions. The same optimization loop and knowledge schema support CUDA on NVIDIA GPUs, OpenCL on Qualcomm GPUs, and RVV intrinsics on RISC-V vector cores, with only lowering and measurement layers specific to each target. Compared with PyTorch, ModelBlaster achieves geometric-mean speedups of 1.85x, 5.58x, and 5.18x on KernelBench Levels 1, 2, and 3, and 1.69x on SOL-ExecBench Levels 1 and 2 on a B200 GPU. On Qualcomm Adreno GPUs, it achieves 5.8x over the vendor SDK and 1.7x over Apache TVM; on RISC-V vector cores, it achieves 2.7x over ExecuTorch with XNNPACK across 70 KernelBench problems.",
-        "authors": [
-          "Shengjun Kris Dong",
-          "Dima Nikiforov",
-          "Sahil Modi",
-          "Sana Damani",
-          "Edward Lin",
-          "S. Hari",
-          "Christos Kozyrakis"
-        ],
-        "published": "2026-11-03",
-        "url": "https://www.semanticscholar.org/paper/9a4d7365ab57af54f35f6f7d3fc3e6f049b30d4e",
-        "pdf_url": "https://arxiv.org/pdf/2611.04104",
+        "published": "2026-11-02",
+        "url": "https://www.semanticscholar.org/paper/af970bea2a86d99bbc1e1391867935a8c9c06be0",
+        "pdf_url": "https://arxiv.org/pdf/2611.03097",
         "venue": "arXiv",
-        "arxiv_id": "2611.04104",
+        "arxiv_id": "2611.03097",
         "doi": null,
-        "s2_id": "9a4d7365ab57af54f35f6f7d3fc3e6f049b30d4e",
+        "s2_id": "af970bea2a86d99bbc1e1391867935a8c9c06be0",
         "citation_count": 0,
         "influential_citation_count": 0,
         "hf_upvotes": null,
@@ -91,14 +29,94 @@
         ],
         "source_reason": "S2 recommendation from your reads"
       },
+      "lane": "niche",
+      "depth": "deep",
+      "score": 0.7131,
+      "why": "S2 recommendation from your reads",
+      "payoff": "Complex documents such as scientific papers contain rich information in tables, figures, and equations; however, existing deep research (DR) agents typically reduce papers to OCR-extracted text. We instead ask whether vision-language models (VLMs) can enable page-native deep rese…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2608.15703",
+        "title": "HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation",
+        "abstract": "Large language model (LLM) agents often perform poorly on complex, long-horizon tasks because their context becomes increasingly cluttered over time. As interactions accumulate, detailed execution traces and intermediate outputs dominate the context, making it difficult for the model to retain and use high-level planning information. Most existing methods address this issue through compression or retrieval applied to a single, flat context, which does not clearly separate different types of context information and often leads to degraded reasoning. To address this challenge, we propose HyMem, a hierarchical framework that explicitly separates the agent's context into distinct functional layers. HyMem organizes context by function to separate high-level planning from execution and complex analysis. Its isolated reasoning module handles complex subtasks without adding intermediate reasoning traces to the persistent planning context, while its memory management module preserves task progress across context refreshes through structured summaries. These components reduce redundant context accumulation, retain task-critical information, and support coherent long-horizon reasoning within a limited context window. Experiments on GAIA and Browsecomp-plus show that, with DeepSeek-V4, HyMem achieves average Pass@1 scores of 66.7% and 61.3%, outperforming the strongest baseline by 6.1 and 4.7 percentage points, respectively. Further analysis indicates that HyMem effectively controls the growth of the reasoning context, allowing the model to maintain focus and accuracy across complex, long-horizon tasks.",
+        "authors": [
+          "Xinqi Wang",
+          "Jin-Wei Xiao",
+          "Sijia Cui",
+          "Hongming Zhang",
+          "Yanna Wang",
+          "Qingyang Zhang",
+          "Bo Xu"
+        ],
+        "published": "2026-08-16",
+        "url": "https://www.semanticscholar.org/paper/db9ab60be776a62cc3be744d28468642bcada5a6",
+        "pdf_url": "https://arxiv.org/pdf/2608.15703",
+        "venue": "arXiv.org",
+        "arxiv_id": "2608.15703",
+        "doi": "10.48550/arXiv.2608.15703",
+        "s2_id": "db9ab60be776a62cc3be744d28468642bcada5a6",
+        "citation_count": 2,
+        "influential_citation_count": 0,
+        "hf_upvotes": null,
+        "source_lanes": [
+          "neighbourhood"
+        ],
+        "source_reason": "cited by 2610.15208"
+      },
       "lane": "neighbourhood",
       "depth": "skim",
-      "score": 0.5479,
-      "why": "S2 recommendation from your reads",
-      "payoff": "Optimizing accelerator code across hardware architectures is difficult. ML compilers search predefined spaces of schedules and micro-kernels, while LLM-guided optimization can explore alternative algorithms, operator decompositions, and hardware-specific techniques. However, exis…",
+      "score": 0.5233,
+      "why": "cited by 2610.15208",
+      "payoff": "Large language model (LLM) agents often perform poorly on complex, long-horizon tasks because their context becomes increasingly cluttered over time. As interactions accumulate, detailed execution traces and intermediate outputs dominate the context, making it difficult for the m…",
+      "led_from": []
+    },
+    {
+      "paper": {
+        "id": "2611.31201",
+        "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+        "abstract": "Frontier multimodal models exhibit extraordinary generalization in generating robot actions from observations and instructions, enabling a new paradigm in which they serve directly as policies within closed-loop robotic harnesses. However, the design principles of such harnesses, and the capabilities underlying their strong performance, remain unclear. We present Embo-Harness, a framework for systematically studying frontier-model-as-policy harnesses. We investigate four components of the robotic agentic loop, namely, prompting, planning, action execution, and tool use, and distill six empirical findings into a practical recipe. This recipe prioritizes interfaces that exploit the model's native visual reasoning and tool-use capabilities over handcrafted plans, skills, or action priors, and identifies effective choices for action representation, chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement. On RoboLab-120, Embo-Harness achieves an 83.3\\% success rate, outperforming the strongest reported baseline by 26.2 percentage points. It also succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Beyond performance, controlled interventions indicate that the studied model depends more strongly on accurate spatial target estimation than on explicit low-level joint or trajectory generation. These results provide both a practical recipe for building strong frontier-model-as-policy harnesses and a clearer account of the capabilities that drive their performance.",
+        "authors": [
+          "Xiao-Ming Wu",
+          "Kang Liao",
+          "Yuexiao Ma",
+          "Taolin Zhang",
+          "Mingqian Zhou",
+          "Nuo Chen",
+          "Ziming Li",
+          "Yihang Luo",
+          "Rui Li",
+          "Zhonghua Wu",
+          "Tianyu Xie",
+          "Xiawu Zheng",
+          "Zhongang Cai",
+          "Zhi Hou",
+          "Chen Change Loy"
+        ],
+        "published": "2026-11-23",
+        "url": "https://arxiv.org/abs/2611.31201",
+        "pdf_url": "https://arxiv.org/pdf/2611.31201",
+        "venue": "arXiv",
+        "arxiv_id": "2611.31201",
+        "doi": null,
+        "s2_id": null,
+        "citation_count": null,
+        "influential_citation_count": null,
+        "hf_upvotes": 76,
+        "source_lanes": [
+          "field"
+        ],
+        "source_reason": "trending on HF Daily Papers"
+      },
+      "lane": "field",
+      "depth": "skim",
+      "score": 0.5265,
+      "why": "trending on HF Daily Papers",
+      "payoff": "Frontier multimodal models exhibit extraordinary generalization in generating robot actions from observations and instructions, enabling a new paradigm in which they serve directly as policies within closed-loop robotic harnesses. However, the design principles of such harnesses,…",
       "led_from": []
     }
   ],
-  "generated_at": "2026-11-23T03:07:11.795235Z",
+  "generated_at": "2026-11-24T10:26:40.594791Z",
   "gap_queries": []
 }
